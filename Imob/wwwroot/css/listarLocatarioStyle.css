@@ -1,0 +1,123 @@
+﻿:root {
+    --escuro: #282A43;
+    --claro: #383B5A;
+    --verde: #00FFA3;
+    --branco: #fff;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    background: var(--escuro);
+    font-family: Roboto, Arial, sans-serif;
+}
+
+#page {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+}
+
+    #page aside {
+        width: 200px;
+        background: var(--claro);
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        animation: asideAni 1.5s cubic-bezier(0, 0.2, 0.8,1);
+    }
+
+        #page aside h1 {
+            color: var(--verde);
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 40px;
+            line-height: 42px;
+            margin-top: 10px;
+            animation: fromRight 3s cubic-bezier(0, 0.2, 0.8,1);
+        }
+
+        #page aside i {
+            color: var(--verde);
+            font-size: 100px;
+            line-height: 28px;
+            margin-top: 24px;
+            text-shadow: 0 0.5px 20px;
+            animation: fromRight 3.5s cubic-bezier(0, 0.2, 0.8,1);
+        }
+        #page aside a i {
+            color: var(--branco);
+            font-size: 40px;
+            line-height: 28px;
+            margin-top: 100%;
+            padding: 20px;
+            border: solid 2px var(--claro);
+            animation: fromRight 2s cubic-bezier(0, 0.2, 0.8,1);
+        }
+            #page aside a i:hover {
+                color: var(--verde);
+                border-radius: 50%;
+                
+                border: solid 2px var(--verde);
+            }
+        #page aside footer {
+            color: var(--branco);
+            display: flex;
+            flex-direction: column;
+            line-height: 24px;
+            animation: fromRight 4s cubic-bezier(0, 0.2, 0.8,1);
+        }
+
+            #page aside footer strong {
+                color: var(--verde);
+                font-weight: 800;
+                text-shadow: 0 0.5px 20px;
+                font-size: 40px;
+                margin-bottom: 10px;
+            }
+
+
+
+
+@keyframes fromRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30vw);
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(360deg);
+    }
+}
+
+
+
+
+@keyframes asideAni{
+    from {
+        opacity: 0;
+        transform: translateX(-30vw);
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.tabelaClasse {
+ 
+}

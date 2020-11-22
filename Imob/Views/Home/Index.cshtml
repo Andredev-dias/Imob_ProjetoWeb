@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imob</title>
+    <link rel="stylesheet" href="~/css/login.css" />
+    <script src="https://kit.fontawesome.com/0aa0d458c6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Imob</h1>
+    <section class="form-section">
+
+        <img src="~/Resources/logo.png" alt="Imob" />
+
+
+        <div class="form-wrapper">
+            <form  asp-action="InicialMenu" asp-controller="Home">
+                <div class="input-block">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" />
+                </div>
+                <div class="input-block">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" />
+                </div>
+                <input  type="submit" class="btn-login" value="Login" />
+                <a href="#" class="a-classe">Não possuo cadastro na Imob</a>
+            </form>
+        </div>
+    </section>
+    <h2>Gestão de Imóveis<br /> "sem complicação" <br />em todo Brasil!!!</h2>
+
+    <ul class="squares">
+    </ul>
+    <script src="~/js/login.js"></script>
+</body>
+</html>

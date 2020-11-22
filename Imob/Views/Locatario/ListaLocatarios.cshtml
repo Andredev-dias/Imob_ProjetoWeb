@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imob</title>
+    <link rel="stylesheet" href="~/css/listarLocatarioStyle.css" />
+   
+    <script src="https://kit.fontawesome.com/0aa0d458c6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+    <div id="page">
+        <aside>
+            <header>
+                <i class="far fa-address-card"></i>
+                <h1>Lista de Locatários</h1>
+                <a href="#"><i class="fas fa-arrow-left"></i></a>
+            </header>
+
+            <footer>
+                <strong>Imob</strong>
+                <span>Imóveis</span>
+            </footer>
+        </aside>
+
+        <table class="tabelaClasse">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Categoria</th>
+                    <th>Imagem</th>
+                    <th>Criado em</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <tr>
+                        <td>Id</td>
+                        <td>Nome</td>
+                        <td>Descricao</td>
+                        <td>Quantidade</td>
+                        <td>Preco.ToString("C2")</td>
+                        <td>Categoria.Nome</td>
+                        <td>
+                            <img src="" alt=""
+                                 style="width:120px;height:100px" />
+                        </td>
+                        <td>CriadoEm</td>
+                        <td>
+                            <a 
+                               class="r">Remover</a>
+                        </td>
+                        <td>
+                            <a
+                               class="">Alterar</a>
+                        </td>
+                    </tr>
+}
+            </tbody>
+        </table>
+
+
+
+
+        <ul class="squares">
+        </ul>
+        <script src="~/js/login.js"></script>
+</body>
+</html>

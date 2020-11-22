@@ -1,0 +1,293 @@
+﻿:root {
+    --escuro: #282A43;
+    --claro: #383B5A;
+    --verde: #00FFA3;
+    --branco: #fff;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    overflow: hidden;
+    height: 100vh;
+}
+
+body {
+    background-color: var(--escuro);
+    font-family: Roboto, Arial, sans-serif;
+}
+
+a {
+    font-size: 10px;
+    color: var(--verde);
+    text-align: center;
+    margin-left: 17%;
+}
+
+section {
+    
+    display: flex;
+    flex-direction: inherit;
+    justify-content: center;
+    align-items: center;
+}
+
+    section img {
+        width: 28%;
+        animation: spin 2s cubic-bezier(0, 0.2, 0.8,1);
+    }
+
+@keyframes spin {
+    from {
+        opacity: 0;
+        transform: translateX(-30vw) rotate(540deg) scale(0.1);
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(0) scale(1);
+    }
+}
+h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8%;
+    color: var(--verde);
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: 900;
+    font-size: 9.4rem;
+    line-height: 4.6rem;
+    margin-bottom: 2%;
+    text-shadow: 0 0.5px 20px;
+    animation: fromRight 2.5s cubic-bezier(0, 0.2, 0.8,1);
+}
+
+@keyframes fromRight {
+   
+        from
+
+{
+    opacity: 0;
+    transform: translateX(-35%);
+}
+
+to {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+}
+
+
+h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-top: -40px;
+    margin-left: -30%;
+    color: var(--branco);
+    animation: appear 2s cubic-bezier(0, 0.2, 0.8,1);
+}
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateX(35%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
+
+form {
+    margin: 20px 0;
+    background-color: var(--claro);
+    padding: 30px 25px;
+    border-radius: 5px;
+    z-index: 900;
+}
+
+
+    form .input-block {
+        margin-bottom: 20px;
+    }
+
+        form .input-block label {
+            font-size: 14px;
+            color: var(--verde);
+        }
+
+        form .input-block input {
+            width: 100%;
+            display: block;
+            margin-top: 8px;
+            padding: 7px;
+            font-size: 16px;
+            background-color: var(--escuro);
+            border-radius: 2px;
+            border: none;
+            outline-color: #7159c1;
+            z-index: 800;
+            color: var(--branco);
+        }
+
+    form .btn-login {
+        display: block;
+        min-width: 120px;
+        border: none;
+        background-color: var(--escuro);
+        color: var(--branco);
+        border-radius: 25px;
+        margin: 0 auto;
+        padding: 7px;
+        z-index: 800;
+        
+        border: solid 1.5px var(--escuro);
+    }
+
+        form .btn-login:hover {
+            color: var(--verde);
+            border: solid 1.5px var(--verde);
+        }
+
+/* aparição do form */
+form {
+    overflow: hidden; /*retira o bug q passa por cima do background*/
+    animation: fade 3s;
+}
+
+    form .input-block:nth-child(1) {
+        animation: move 1s;
+        animation-delay: 100ms;
+    }
+
+    form .input-block:nth-child(2) {
+        animation: move 1.5s;
+        animation-delay: 250ms;
+        animation-fill-mode: backwards;
+    }
+
+    form .btn-login {
+        animation: move 3s;
+        animation-delay: 400ms;
+        animation-fill-mode: backwards;
+        z-index: 900;
+    }
+
+        form .btn-login:hover {
+            cursor: pointer;
+        }
+
+@keyframes move {
+    from {
+        opacity: 0;
+        transform: translateX(-35%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* sumir com o form depois q clica no botao*/
+
+.form-hide {
+    animation: down 1.5s forwards;
+    animation-timing-function: cubic-bezier(0, 1, 0.6,0.2);
+    /* animation-timing-function: steps(2);*/
+}
+
+@keyframes down {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+/*animação de nao nao se campo vazio*/
+
+form.validate-error {
+    animation: nono 200ms linear, fade paused;
+    animation-iteration-count: 4;
+}
+
+@keyframes nono {
+    0%,100% {
+        transform: translateX(0);
+    }
+
+    35% {
+        transform: translateX(-10%);
+    }
+
+    70% {
+        transform: translateX(10%);
+    }
+}
+
+/*quadrados em animação no fundo*/
+body {
+    overflow: hidden;
+}
+
+.squares li {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.15);
+    display: block;
+    position: absolute;
+    bottom: -40px;
+    animation: up 3s infinite;
+    animation-direction: alternate;
+    z-index: -1;
+}
+
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-130vh) rotate(960deg);
+    }
+}
+
