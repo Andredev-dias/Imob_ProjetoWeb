@@ -219,8 +219,9 @@ form {
             cursor: pointer;
         }
 
-button {
-
+.btn-CEP {
+    color: var(--verde);
+    font-size: 40px;
 }
 
 .squares li {
