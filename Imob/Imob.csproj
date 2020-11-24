@@ -6,16 +6,12 @@
 
   <ItemGroup>
     <Compile Remove="NovaPasta1\**" />
-    <Compile Remove="NovaPasta\**" />
     <Compile Remove="Views\NovaPasta\**" />
     <Content Remove="NovaPasta1\**" />
-    <Content Remove="NovaPasta\**" />
     <Content Remove="Views\NovaPasta\**" />
     <EmbeddedResource Remove="NovaPasta1\**" />
-    <EmbeddedResource Remove="NovaPasta\**" />
     <EmbeddedResource Remove="Views\NovaPasta\**" />
     <None Remove="NovaPasta1\**" />
-    <None Remove="NovaPasta\**" />
     <None Remove="Views\NovaPasta\**" />
   </ItemGroup>
 
@@ -25,7 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="ContratosPDF\" />
+    <Folder Include="DAL\" />
     <Folder Include="Views\Imovel\" />
     <Folder Include="Views\Corretor\" />
     <Folder Include="Views\Contrato\" />
