@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Imob.Models
 {
     [Table("Contratos")]
-    public class Contrato : BaseModel
+    class Contrato : BaseModel
     {
         public DateTime DataVencimento { get; set; }
 

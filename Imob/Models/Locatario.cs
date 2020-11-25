@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Imob.Models
 {
     [Table("Locatarios")]
-    public class Locatario : Pessoa
+    class Locatario : Pessoa
     {
         [Required(ErrorMessage = "Renda disponível é obrigatório!")]
         public double RendaDisponivel { get; set; }

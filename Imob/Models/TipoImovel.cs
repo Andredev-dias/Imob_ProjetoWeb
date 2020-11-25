@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Imob.Models
 {
     [Table("TipoImovel")]
-    public class TipoImovel : BaseModel
+    class TipoImovel : BaseModel
     {
         [Required(ErrorMessage = "Comissão é obrigatório!")]
         public int Comissao { get; set; }
