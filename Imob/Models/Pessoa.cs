@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Imob.Models
 {
-    class Pessoa : BaseModel
+    public class Pessoa : BaseModel
     {
         [Required(ErrorMessage = "Nome é obrigatório!")]
         public string Nome { get; set; }

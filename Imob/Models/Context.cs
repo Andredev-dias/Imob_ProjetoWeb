@@ -1,12 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Imob.Models
 {
-    class Context : DbContext
+    public class Context : DbContext
     {
         public DbSet<Corretor> Corretores { get; set; }
         public DbSet<Contrato> Contratos { get; set; }
