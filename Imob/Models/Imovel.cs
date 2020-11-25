@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Imob.Models
 {
     [Table("Imoveis")]
-    class Imovel : BaseModel
+    public class Imovel : BaseModel
     {
         [Required(ErrorMessage = "Endereço é obrigatório!")]
         public string Endereco { get; set; }

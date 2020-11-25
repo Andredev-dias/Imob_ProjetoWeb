@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Imob.Models
 {
     [Table("Corretores")]
-    class Corretor : Pessoa
+    public class Corretor : Pessoa
     {
         [Required(ErrorMessage = "Número do Cofeci é obrigatório!")]
         public string Cofeci { get; set; }
