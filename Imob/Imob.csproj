@@ -22,9 +22,7 @@
 
   <ItemGroup>
     <Folder Include="ContratosPDF\" />
-    <Folder Include="DAL\" />
     <Folder Include="Views\Imovel\" />
-    <Folder Include="Views\Corretor\" />
     <Folder Include="Views\Contrato\" />
   </ItemGroup>
 

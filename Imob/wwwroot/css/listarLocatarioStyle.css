@@ -142,23 +142,46 @@ body {
     color: var(--verde);
 }
 
+.th_classeID {
+    text-align: left;
+    width:30px;
+    padding-left: 4px;
+    color: var(--verde);
+}
+.th_classeEMAIL {
+    text-align: left;
+    width: 180px;
+    padding-left: 25px;
+    color: var(--verde);
+}
+
 .tr_classe {
     font-size: 14px;
     font-family: Roboto, Arial, sans-serif;
 }
 
 .td_classe {
-    text-align: center;
+    text-align: left;
     width: 120px;
     border-bottom: 4px solid var(--escuro);
 }
 
+.td_classeID {
+    text-align: left;
+    width: 30px;
+    border-bottom: 4px solid var(--escuro);
+}
+.td_classeEMAIL {
+    text-align: left;
+    width: 180px;
+    border-bottom: 4px solid var(--escuro);
+    
+}
 .btn-remover {
     width: 40px;
     font-weight: 900;
     font-size: 15px;
     color: var(--escuro);
- 
 }
     .btn-remover::after {
         content: '';
@@ -222,17 +245,18 @@ body {
     color: var(--verde);
     font-size: 16px;
     padding:20px;
-    
+    margin-left: -30px;
 }
 .btn-cad {
-  
+    margin-right: 500px;
     color: var(--verde);
-    font-size: 40px;
+    font-size: 30px;
+    padding-top: 10px;
 }
     .btn-cad:hover {
         cursor: pointer;
         color: var(--branco);
-        text-shadow: 0 0.5px 20px;
+        text-shadow: 0 0.5px 5px;
         transition: all 200ms ease-in-out;
     }
 
@@ -242,23 +266,24 @@ body {
     height: 30px;
     background: var(--escuro);
     color: var(--branco);
-    font-size: 50px;
+    font-size: 30px;
+    padding-top: 10px;
 }
 .btn-buscar:hover {
     cursor: pointer;
     color: var(--branco);
-    text-shadow: 0 0.5px 20px;
+    text-shadow: 0 0.5px 5px;
     transition: all 200ms ease-in-out;
 }
 
 .inputDoSearch {
     background: none;
     font-size: 20px;
-   padding:20px;
+   padding:10px;
     border-radius: 2px;
     border: none;
     color: var(--branco);
     border-bottom: solid 4px var(--branco);
     width: 450px;
-    text-align: right;
+    text-align: left;
 }

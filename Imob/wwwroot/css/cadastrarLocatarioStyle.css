@@ -46,7 +46,7 @@ body {
             font-size: 100px;
             line-height: 28px;
             margin-top: 24px;
-            text-shadow: 0 0.5px 20px;
+            text-shadow: 0 0.5px 5px;
             animation: fromRight 3.5s cubic-bezier(0, 0.2, 0.8,1);
         }
         #page aside a i {
@@ -220,8 +220,15 @@ form {
         }
 
 .btn-CEP {
-    color: var(--verde);
+    background: none;
+    border: none;
+    color: var(--branco);
     font-size: 40px;
+}
+
+.btn-CEP:hover{
+    color: var(--verde);
+    cursor:pointer;
 }
 
 .squares li {
