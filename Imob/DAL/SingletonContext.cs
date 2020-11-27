@@ -1,8 +1,8 @@
-﻿using LocadoraDeImoveis.Models;
+﻿using Imob.Models;
 
 namespace LocadoraDeImoveis.DAL
 {
-    class SingletonContext
+    public class SingletonContext
     {
         private static Context _context;
         public static Context GetInstance()

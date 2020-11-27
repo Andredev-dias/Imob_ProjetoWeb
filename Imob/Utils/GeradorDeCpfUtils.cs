@@ -1,5 +1,5 @@
 ﻿using IronPdf;
-using LocadoraDeImoveis.Models;
+using Imob.Models;
 using System.IO;
 using System.Reflection;
 

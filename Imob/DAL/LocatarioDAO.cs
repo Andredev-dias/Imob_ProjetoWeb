@@ -1,19 +1,20 @@
-﻿
-using LocadoraDeImoveis.Models;
+﻿using Imob.Models;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace LocadoraDeImoveis.DAL
 {
-    class LocatarioDAO
+    public class LocatarioDAO
     {
-        private static Context _context = SingletonContext.GetInstance();
-        public static Locatario BuscarPorNome(string nome) =>
+        private readonly Context _context;
+
+        public LocatarioDAO(Context context) => _context = context;
+        public Locatario BuscarPorNome(string nome) =>
             _context.Locatarios.FirstOrDefault(x => x.Nome == nome);
 
-        public static Locatario BuscarPorId(int id) =>
+        public Locatario BuscarPorId(int id) =>
             _context.Locatarios.Find(id);
-        public static bool BuscarPorCpf(string cpf)
+        public  bool BuscarPorCpf(string cpf)
         {
             var x = _context.Locatarios.FirstOrDefault(x => x.Cpf == cpf);
             if (x != null)
@@ -22,7 +23,7 @@ namespace LocadoraDeImoveis.DAL
             }
             return true;
         }
-        public static bool Cadastrar(Locatario locatario)
+        public bool Cadastrar(Locatario locatario)
         {
             if (BuscarPorNome(locatario.Nome) == null)
             {
@@ -33,7 +34,7 @@ namespace LocadoraDeImoveis.DAL
             return false;
         }
 
-        public static bool Atualizar(Locatario locatario)
+        public bool Atualizar(Locatario locatario)
         {
             if (BuscarPorId(locatario.Id) != null)
             {
@@ -43,7 +44,7 @@ namespace LocadoraDeImoveis.DAL
             }
             return false;
         }
-        public static bool Remover(Locatario locatario)
+        public bool Remover(Locatario locatario)
         {
             var Locatario = BuscarPorId(locatario.Id);
             var c = _context.Locatarios.Remove(Locatario);
@@ -55,8 +56,8 @@ namespace LocadoraDeImoveis.DAL
             }
             return true;
         }
-        public static List<Locatario> FiltrarPorParteNome(string parteNome) =>
+        public List<Locatario> FiltrarPorParteNome(string parteNome) =>
             _context.Locatarios.Where(x => x.Nome.Contains(parteNome)).ToList();
-        public static List<Locatario> Listar() => _context.Locatarios.ToList();
+        public List<Locatario> Listar() => _context.Locatarios.ToList();
     }
 }
