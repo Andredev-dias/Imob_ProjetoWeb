@@ -1,8 +1,9 @@
-﻿using LocadoraDeImoveis.Models;
+﻿using Imob.Models;
+using LocadoraDeImoveis.DAL;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LocadoraDeImoveis.DAL
+namespace Imob.DAL
 {
     class CorretorDAO
     {

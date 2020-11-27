@@ -1,11 +1,10 @@
-﻿using LocadoraDeImoveis.Models;
+﻿using Imob.Models;
+using LocadoraDeImoveis.DAL;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace LocadoraDeImoveis.DAL
+namespace Imob.DAL
 {
     class ImovelDAO
     {

@@ -1,7 +1,4 @@
-﻿using LocadoraDeImoveis.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Imob.Models;
 
 namespace LocadoraDeImoveis.DAL
 {
