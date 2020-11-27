@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace LocadoraDeImoveis.Utils
+namespace Imob.Utils
 {
     class ValidacaoCpfUtils
     {        

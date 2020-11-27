@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace LocadoraDeImoveis.Utils
+namespace Imob.Utils
 {
     class BuscaCepUtils
     {

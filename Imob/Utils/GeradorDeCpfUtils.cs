@@ -3,7 +3,7 @@ using LocadoraDeImoveis.Models;
 using System.IO;
 using System.Reflection;
 
-namespace LocadoraDeImoveis.Utils
+namespace Imob.Utils
 {
     class GeradorDeCpfUtils
     { 
