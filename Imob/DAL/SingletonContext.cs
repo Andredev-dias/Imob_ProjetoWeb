@@ -1,6 +1,6 @@
 ﻿using Imob.Models;
 
-namespace LocadoraDeImoveis.DAL
+namespace Imob.DAL
 {
     public class SingletonContext
     {
