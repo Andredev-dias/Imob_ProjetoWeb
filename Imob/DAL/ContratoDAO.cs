@@ -1,5 +1,5 @@
 ﻿using Imob.Models;
-using LocadoraDeImoveis.DAL;
+using Imob.DAL;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;

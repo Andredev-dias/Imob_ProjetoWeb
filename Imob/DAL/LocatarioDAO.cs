@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LocadoraDeImoveis.DAL
+namespace Imob.DAL
 {
     public class LocatarioDAO
     {
