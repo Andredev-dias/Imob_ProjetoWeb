@@ -4,9 +4,11 @@ namespace Imob.DAL
 {
     class TipoImovelDAO
     {
-        private static Context _context = SingletonContext.GetInstance();
+        private readonly Context _context;
 
-        public static TipoImovel BuscarPorId(int id) =>
+        public TipoImovelDAO(Context context) => _context = context;
+
+        public TipoImovel BuscarPorId(int id) =>
             _context.TipoImovel.Find(id);
     }
 }

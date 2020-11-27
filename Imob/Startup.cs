@@ -1,12 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Imob.DAL;
+using Imob.Models;
 
 namespace Imob
 {
@@ -20,8 +20,29 @@ namespace Imob
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ContratoDAO>();
+            services.AddScoped<LocatarioDAO>();
+            services.AddScoped<CorretorDAO>();
+            services.AddScoped<ImovelDAO>();
+            services.AddScoped<TipoImovelDAO>();
+
+            services.AddHttpContextAccessor();
+
+            services.AddDbContext<Context>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("Connection")));
+
+            services.AddIdentity<Usuario, IdentityRole>().
+                AddEntityFrameworkStores<Context>().AddDefaultTokenProviders();
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Usuario/Login";
+                options.AccessDeniedPath = "/Usuario/AcessoNegado";
+            });
+
+            services.AddSession();
             services.AddControllersWithViews();
         }
 
@@ -40,7 +61,11 @@ namespace Imob
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

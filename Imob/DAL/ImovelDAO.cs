@@ -7,16 +7,18 @@ namespace Imob.DAL
 {
     class ImovelDAO
     {
-        private static Context _context = SingletonContext.GetInstance();    
+              private readonly Context _context;
 
-        public static Imovel BuscarPorId(int id) =>
+        public ImovelDAO(Context context) => _context = context; 
+
+        public Imovel BuscarPorId(int id) =>
             _context.Imoveis.Find(id);
 
-        public static List<Imovel> BuscarPorIdCompleto(int id)
+        public List<Imovel> BuscarPorIdCompleto(int id)
         {
             return _context.Imoveis.Include(u => u.TipoImovel.Id == id).ToList();
         }
-        public static bool Cadastrar(Imovel imovel)
+        public bool Cadastrar(Imovel imovel)
         {
             if (BuscarPorId(imovel.Id) == null)
             {
@@ -27,7 +29,7 @@ namespace Imob.DAL
             return false;
         }
 
-        public static bool Atualizar(Imovel imovel)
+        public bool Atualizar(Imovel imovel)
         {
             if (BuscarPorId(imovel.Id) != null)
             {
@@ -37,7 +39,7 @@ namespace Imob.DAL
             }
             return false;
         }
-        public static bool Remover(Imovel imovel)
+        public bool Remover(Imovel imovel)
         {
             var Imovel = BuscarPorId(imovel.Id);
             var c = _context.Imoveis.Remove(Imovel);
@@ -50,12 +52,12 @@ namespace Imob.DAL
             return true;
         }
 
-        public static List<Imovel> Listar()
+        public List<Imovel> Listar()
         {
             return _context.Imoveis.Include("TipoImovel").ToList();
         }
 
-        public static List<Imovel> ListarPorFiltro(string filtro)
+        public List<Imovel> ListarPorFiltro(string filtro)
         {
             switch (filtro)
             {

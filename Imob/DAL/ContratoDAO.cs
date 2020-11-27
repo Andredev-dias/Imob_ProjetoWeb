@@ -8,14 +8,16 @@ namespace Imob.DAL
 {
     class ContratoDAO
     {
-        private static Context _context = SingletonContext.GetInstance();       
-        public static Contrato BuscarPorId(int id) =>
+        private readonly Context _context;
+
+        public ContratoDAO(Context context) => _context = context;
+        public Contrato BuscarPorId(int id) =>
             _context.Contratos.Include("Imovel").Include("Corretor").Include("Locatario").FirstOrDefault(x => x.Id == id);
 
-        public static List<Contrato> BuscarPorCorretor(string corretor) =>
+        public List<Contrato> BuscarPorCorretor(string corretor) =>
             _context.Contratos.Include("Imovel").Include("Corretor").Include("Locatario").Where(x => x.Corretor.Nome == corretor).ToList();
 
-        public static bool Cadastrar(Contrato Contrato)
+        public bool Cadastrar(Contrato Contrato)
         {
             if (BuscarPorId(Contrato.Id) == null)
             {
@@ -26,7 +28,7 @@ namespace Imob.DAL
             return false;
         }
 
-        public static bool Atualizar(Contrato Contrato)
+        public bool Atualizar(Contrato Contrato)
         {
             if (BuscarPorId(Contrato.Id) != null)
             {
@@ -36,8 +38,8 @@ namespace Imob.DAL
             }
             return false;
         }
-        public static bool Remover(Contrato Contrato)
-        {            
+        public bool Remover(Contrato Contrato)
+        {
             var c = _context.Contratos.Remove(Contrato);
             _context.SaveChanges();
 
@@ -47,9 +49,9 @@ namespace Imob.DAL
             }
             return true;
         }
-        public static List<Corretor> FiltrarPorParteNome(string parteNome) =>
+        public List<Corretor> FiltrarPorParteNome(string parteNome) =>
             _context.Corretores.Where(x => x.Nome.Contains(parteNome)).ToList();
-        public static List<Contrato> Listar() => _context.Contratos
+        public List<Contrato> Listar() => _context.Contratos
                                                             .Include("Imovel")
                                                             .Include("Corretor")
                                                             .Include("Locatario")
