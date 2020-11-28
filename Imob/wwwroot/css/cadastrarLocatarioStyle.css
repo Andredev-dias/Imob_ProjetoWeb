@@ -338,3 +338,7 @@ form {
         transform: translateX(0);
     }
 }
+
+.form-control-file{
+    background: none;
+}
