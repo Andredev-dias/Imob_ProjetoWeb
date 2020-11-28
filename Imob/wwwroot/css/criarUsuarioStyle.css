@@ -1,0 +1,14 @@
+﻿
+#page aside {
+    width: 300px;
+    background: var(--claro);
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: asideAni 1.5s cubic-bezier(0, 0.2, 0.8,1);
+}
+
+input{
+    background: none;
+}
