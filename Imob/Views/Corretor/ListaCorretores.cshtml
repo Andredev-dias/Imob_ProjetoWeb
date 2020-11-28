@@ -31,7 +31,7 @@
         <table class="tabelaClasse">
             <div class="topoDaLista">
                 <h4 class="h4add">Adicionar</h4>
-                <a asp-action="" asp-controller="" class="btn-cad"><i class="fas fa-plus"></i></a>
+                <a asp-action="CadastrarCorretor" asp-controller="Corretor" class="btn-cad"><i class="fas fa-plus"></i></a>
                 <input class="inputDoSearch" type="text" placeholder="Digite o nome do corretor para busca!" />
                 <a class="btn-buscar"><i class="fas fa-search-plus"></i></a>
             </div>
@@ -64,12 +64,12 @@
                         <td class="td_classe">@corretorCadastrado.UF</td>
                         <td class="td_classe">@corretorCadastrado.Cofeci</td>
                         <td>
-                            <a asp-action="Remover" asp-controller="Corretor" class="btn-remover">
+                            <a asp-action="Remover" asp-controller="Corretor" asp-route-id="@corretorCadastrado.Id" class="btn-remover">
                                 EXCLUIR
                             </a>
                         </td>
                         <td>
-                            <a asp-action="Atualizar" asp-controller="Corretor" asp-route-id="" class="btn-alterar">
+                            <a asp-action="Atualizar" asp-controller="Corretor" asp-route-id="@corretorCadastrado.Id" class="btn-alterar">
                                 EDITAR
                             </a>
                         </td>

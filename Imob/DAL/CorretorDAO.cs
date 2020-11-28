@@ -56,18 +56,13 @@ namespace Imob.DAL
             return false;
         }
         */
-        public bool Remover(Corretor corretor)
-        {
-            var Corretor = BuscarPorId(corretor.Id);
-            var c = _context.Corretores.Remove(Corretor);
-            _context.SaveChanges();
 
-            if (c == null)
-            {
-                return false;
-            }
-            return true;
+        public void Remover(int id)
+        {
+            _context.Corretores.Remove(BuscarPorId(id));
+            _context.SaveChanges();
         }
+
         public List<Corretor> FiltrarPorParteNome(string parteNome) =>
             _context.Corretores.Where(x => x.Nome.Contains(parteNome)).ToList();
         public List<Corretor> Listar() => _context.Corretores.ToList();

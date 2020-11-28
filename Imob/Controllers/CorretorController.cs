@@ -28,20 +28,32 @@ namespace Imob.Controllers
             return View(corretores);
         }
 
+        // Cadastrar
         public IActionResult CadastrarCorretor()
         {
             return View();
         }
 
+        public IActionResult CadastrarCorretor(Corretor corretor)
+        {
+            return View(corretor);
+        }
 
+        // Atualizar
         public IActionResult Atualizar(int id)
         {
             return View(_corretorDAO.BuscarPorId(id));
         }
 
         public IActionResult Atualizar(Corretor corretor)
-        {
+        {   
             _corretorDAO.Atualizar(corretor);
+            return RedirectToAction("ListaCorretores");
+        }
+        // Remover
+        public IActionResult Remover(int id)
+        {
+            _corretorDAO.Remover(id);
             return RedirectToAction("ListaCorretores");
         }
     }

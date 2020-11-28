@@ -44,18 +44,12 @@ namespace Imob.DAL
             }
             return false;
         }
-        public bool Remover(Locatario locatario)
+        public void Remover(int id)
         {
-            var Locatario = BuscarPorId(locatario.Id);
-            var c = _context.Locatarios.Remove(Locatario);
+            _context.Locatarios.Remove(BuscarPorId(id));
             _context.SaveChanges();
-
-            if (c == null)
-            {
-                return false;
-            }
-            return true;
         }
+
         public List<Locatario> FiltrarPorParteNome(string parteNome) =>
             _context.Locatarios.Where(x => x.Nome.Contains(parteNome)).ToList();
         public List<Locatario> Listar() => _context.Locatarios.ToList();

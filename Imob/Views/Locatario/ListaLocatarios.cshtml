@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model List<Imob.Models.Locatario> 
+
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="utf-8" />
@@ -46,22 +48,30 @@
             </thead>
             <tbody>
 
+                @foreach (Imob.Models.Locatario locatarioCadastrado in Model)
+                {
+
                 <tr class="tr_classe">
-                    <td class="td_classeID">00</td>
-                    <td class="td_classe">Aldemir da Frota</td>
-                    <td class="td_classe">0.59.328.159-22</td>
-                    <td class="td_classeEMAIL">jajaja@jaja.com.br</td>
-                    <td class="td_classe">(41) 9999-99999</td>
-                    <td class="td_classe">Curitiba</td>
-                    <td class="td_classe">PR</td>
-                    <td class="td_classe">1.250,00</td>
+                    <td class="td_classeID">@locatarioCadastrado.Id</td>
+                    <td class="td_classe">@locatarioCadastrado.Nome</td>
+                    <td class="td_classe">@locatarioCadastrado.Cpf</td>
+                    <td class="td_classeEMAIL">@locatarioCadastrado.Email</td>
+                    <td class="td_classe">@locatarioCadastrado.Telefone</td>
+                    <td class="td_classe">@locatarioCadastrado.Cidade</td>
+                    <td class="td_classe">@locatarioCadastrado.UF</td>
+                    <td class="td_classe">@locatarioCadastrado.RendaDisponivel</td>
                     <td>
-                        <a class="btn-remover">EXCLUIR</a>
+                        <a asp-action="Remover" asp-controller="Locatario" asp-route-id="@locatarioCadastrado.Id" class="btn-remover">
+                            EXCLUIR
+                        </a>
                     </td>
                     <td>
-                        <a class="btn-alterar">EDITAR</a>
+                        <a asp-action="Atualizar" asp-controller="Locatario" asp-route-id="@locatarioCadastrado.Id" class="btn-alterar">
+                            EDITAR
+                        </a>
                     </td>
                 </tr>
+                }
             </tbody>
         </table>
     </div>
