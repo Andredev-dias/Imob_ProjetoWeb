@@ -2,10 +2,11 @@
 using Imob.DAL;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Imob.DAL
 {
-    class CorretorDAO
+    public class CorretorDAO
     {
         private readonly Context _context;
 
@@ -37,6 +38,13 @@ namespace Imob.DAL
             return false;
         }
 
+        public void Atualizar(Corretor corretor)
+        {
+            _context.Corretores.Update(corretor);
+            _context.SaveChanges();
+        }
+
+        /*
         public bool Atualizar(Corretor corretor)
         {
             if (BuscarPorId(corretor.Id) != null)
@@ -47,6 +55,7 @@ namespace Imob.DAL
             }
             return false;
         }
+        */
         public bool Remover(Corretor corretor)
         {
             var Corretor = BuscarPorId(corretor.Id);
