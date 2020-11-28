@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="ContratosPDF\" />
-    <Folder Include="Views\Contrato\" />
   </ItemGroup>
 
   <ItemGroup>

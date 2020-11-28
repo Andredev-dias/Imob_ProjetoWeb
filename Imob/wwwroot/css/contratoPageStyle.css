@@ -1,0 +1,11 @@
+﻿.form-control
+{
+    
+   
+    width: 100%;
+    background: var(--claro);
+    border: none;
+    color: var(--branco);
+    font-size: 15px;
+    padding: 10px;
+}
