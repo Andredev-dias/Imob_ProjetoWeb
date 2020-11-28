@@ -17,5 +17,10 @@ namespace Imob.Controllers
         {
             return View();
         }
+
+        public IActionResult EditarImovel()
+        {
+            return View();
+        }
     }
 }

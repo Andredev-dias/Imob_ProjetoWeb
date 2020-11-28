@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imob</title>
+    <link rel="stylesheet" href="~/css/cadastrarLocatarioStyle.css" />
+
+    <script src="https://kit.fontawesome.com/0aa0d458c6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+    <div id="page">
+        <aside>
+            <header>
+                <i class="far fa-building"></i>
+                <h1>Editar informações do Imóvel</h1>
+                <a href="#"><i class="fas fa-arrow-left"></i></a>
+            </header>
+
+            <footer>
+                <strong>Imob</strong>
+                <span>Imóveis</span>
+            </footer>
+        </aside>
+
+
+
+        <div class="form-wrapper">
+            <form>
+
+
+                <div class="input-block">
+                    <label for="cep">CEP</label>
+                    <input type="number" />
+                   
+                </div>
+
+                <div class="input-block">
+                    <label for="cidade">Cidade</label>
+                    <input type="text"  />
+                </div>
+
+                <div class="input-block">
+                    <label for="rua">Rua</label>
+                    <input type="text" />
+                </div>
+
+                <div class="input-block">
+                    <label for="uf">UF</label>
+                    <input type="text"  />
+                </div>
+
+
+                <div class="input-block">
+                    <label for="desc">Descrição</label>
+                    <input type="text"  />
+                </div>
+
+
+
+                <div class="input-block">
+                    <label for="area">Àrea</label>
+                    <input type="number" />
+                </div>
+
+                <div class="input-block">
+                    <label for="valorAluguel">Valor do Aluguel</label>
+                    <input type="number" />
+                </div>
+
+                <div class="input-block">
+                    <div id="Imagem" class="form-group">
+                        <label for="imagem">Imagem</label>
+                        <img src="#" />
+                        <input type="file"  name="file" />
+                    </div>
+                </div>
+
+                <input type="submit" class="btn-login" value="Salvar Imóvel" />
+
+            </form>
+        </div>
+    </div>
+
+
+    <ul class="squares">
+    </ul>
+    <script src="~/js/login.js"></script>
+</body>
+</html>

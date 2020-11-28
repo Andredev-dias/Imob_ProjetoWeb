@@ -36,5 +36,10 @@ namespace Imob.Controllers
             _locatarioDAO.Remover(id);
             return RedirectToAction("ListaLocatarios");
         }
+
+        public IActionResult EditarLocatario()
+        {
+            return View();
+        }
     }
 }

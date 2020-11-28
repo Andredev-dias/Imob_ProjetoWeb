@@ -56,5 +56,11 @@ namespace Imob.Controllers
             _corretorDAO.Remover(id);
             return RedirectToAction("ListaCorretores");
         }
+
+
+        public IActionResult EditarCorretor()
+        {
+            return View();
+        }
     }
 }
