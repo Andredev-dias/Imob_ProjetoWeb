@@ -40,16 +40,18 @@ namespace Imob.Controllers
         }
 
         // Atualizar
-        public IActionResult Atualizar(int id)
+        public IActionResult EditarCorretor(int id)
         {
             return View(_corretorDAO.BuscarPorId(id));
         }
 
-        public IActionResult Atualizar(Corretor corretor)
+        [HttpPost]
+        public IActionResult EditarCorretor(Corretor corretor)
         {   
             _corretorDAO.Atualizar(corretor);
             return RedirectToAction("ListaCorretores");
         }
+        
         // Remover
         public IActionResult Remover(int id)
         {
@@ -57,10 +59,11 @@ namespace Imob.Controllers
             return RedirectToAction("ListaCorretores");
         }
 
-
+        /*
         public IActionResult EditarCorretor()
         {
             return View();
         }
+        */
     }
 }

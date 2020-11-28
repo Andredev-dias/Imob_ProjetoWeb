@@ -43,20 +43,7 @@ namespace Imob.DAL
             _context.Corretores.Update(corretor);
             _context.SaveChanges();
         }
-
-        /*
-        public bool Atualizar(Corretor corretor)
-        {
-            if (BuscarPorId(corretor.Id) != null)
-            {
-                _context.Corretores.Update(corretor);
-                _context.SaveChanges();
-                return true;
-            }
-            return false;
-        }
-        */
-
+       
         public void Remover(int id)
         {
             _context.Corretores.Remove(BuscarPorId(id));
