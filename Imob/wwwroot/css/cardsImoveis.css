@@ -1,0 +1,160 @@
+﻿:root {
+    --escuro: #282A43;
+    --claro: #383B5A;
+    --verde: #00FFA3;
+    --branco: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    background: var(--escuro);
+    font-family: Roboto, Arial, sans-serif;
+}
+
+#page {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+}
+
+    #page aside {
+        width: 300px;
+        background: var(--claro);
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        animation: asideAni 1.5s cubic-bezier(0, 0.2, 0.8,1);
+    }
+
+        #page aside h1 {
+            color: var(--verde);
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 40px;
+            line-height: 42px;
+            margin-top: 10px;
+            animation: fromRight 3s cubic-bezier(0, 0.2, 0.8,1);
+        }
+
+        #page aside i {
+            color: var(--verde);
+            font-size: 100px;
+            line-height: 28px;
+            margin-top: 24px;
+            text-shadow: 0 0.5px 5px;
+            animation: fromRight 3.5s cubic-bezier(0, 0.2, 0.8,1);
+        }
+
+        #page aside a i {
+            color: var(--branco);
+            font-size: 40px;
+            line-height: 28px;
+            margin-top: 100%;
+            padding: 20px;
+            border: solid 2px var(--claro);
+            animation: fromRight 2s cubic-bezier(0, 0.2, 0.8,1);
+        }
+
+            #page aside a i:hover {
+                color: var(--verde);
+                border-radius: 50%;
+                border: solid 2px var(--verde);
+            }
+
+        #page aside footer {
+            color: var(--branco);
+            display: flex;
+            flex-direction: column;
+            line-height: 24px;
+            animation: fromRight 4s cubic-bezier(0, 0.2, 0.8,1);
+        }
+
+            #page aside footer strong {
+                color: var(--verde);
+                font-weight: 800;
+                text-shadow: 0 0.5px 20px;
+                font-size: 40px;
+                margin-bottom: 10px;
+            }
+
+
+
+.topoDaLista {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    display: inherit;
+    padding: 10px;
+}
+
+.h4add {
+    color: var(--verde);
+    font-size: 16px;
+    padding: 20px;
+    margin-left: -30px;
+}
+
+.btn-cad {
+    margin-right: 500px;
+    color: var(--verde);
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+    .btn-cad:hover {
+        cursor: pointer;
+        color: var(--branco);
+        text-shadow: 0 0.5px 5px;
+        transition: all 200ms ease-in-out;
+    }
+
+.btn-buscar {
+    margin-left: 20px;
+    width: 50px;
+    height: 30px;
+    background: var(--escuro);
+    color: var(--branco);
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+    .btn-buscar:hover {
+        cursor: pointer;
+        color: var(--branco);
+        text-shadow: 0 0.5px 5px;
+        transition: all 200ms ease-in-out;
+    }
+
+.form-check-label {
+    font-size: 20px;
+    color: var(--branco);
+    margin-right: 40px;
+}
+.form-check-label {
+    font-size: 20px;
+    color: var(--branco);
+   
+}
+
+.card-deck{
+    margin-top: 10%;
+    margin-left: 2%;
+    width:400px;
+    height: 400px;
+}
+
+.card{
+    background: var(--claro);
+    color: var(--branco);
+    border: solid 4px var(--escuro);
+}
+
+.btn-buscar{
+    margin-top: -20px;
+}
