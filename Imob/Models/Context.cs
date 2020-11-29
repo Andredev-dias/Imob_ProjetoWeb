@@ -11,5 +11,6 @@ namespace Imob.Models
         public DbSet<Imovel> Imoveis { get; set; }
         public DbSet<Locatario> Locatarios { get; set; }
         public DbSet<TipoImovel> TipoImovel { get; set; }
+        public DbSet<UsuarioLogado> UsuarioLogado { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model Imob.Models.Locatario
+
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="utf-8" />
@@ -16,7 +18,7 @@
             <header>
                 <i class="far fa-address-card" ></i>
                 <h1>Cadastre um novo Locatário</h1>
-                <a href="#"><i class="fas fa-arrow-left"></i></a>
+                <a asp-action="ListaLocatarios" asp-controller="Locatario"><i class="fas fa-arrow-left"></i></a>
             </header>
 
             <footer>
@@ -24,38 +26,32 @@
                 <span>Imóveis</span>
             </footer>
         </aside>
-        
-
 
         <div class="form-wrapper">
-            <form>
-              
+            <form asp-action="CadastrarLocatario" asp-controller="Locatario" method="post">              
                     <div class="input-block">
-                        <label for="nome">Nome</label>
-                        <input type="text" placeholder="Insira seu nome" />
+                        <label asp-for="Nome">Nome</label>
+                        <input asp-for="Nome" type="text" placeholder="Insira seu nome" />
                     </div>
-
-              
 
                       <div class="input-block">
-                        <label for="cpf">CPF</label>
-                        <input type="number" placeholder="Informe seu CPF" />
+                        <label asp-for="Cpf">CPF</label>
+                        <input asp-for="Cpf" type="number" placeholder="Informe seu CPF" />
                     </div>
 
                     <div class="input-block">
-                        <label for="telefone">Telefone</label>
-                        <input type="number" placeholder="Telefone pessoal" />
-                    </div>
-                
+                        <label asp-for="Telefone">Telefone</label>
+                        <input asp-for="Telefone" type="number" placeholder="Telefone pessoal" />
+                    </div>               
            
                     <div class="input-block">
-                        <label for="email">E-mail</label>
-                        <input type="text" placeholder="Informe seu e-mail" />
+                        <label asp-for="Email">E-mail</label>
+                        <input asp-for="Email" type="text" placeholder="Informe seu e-mail" />
                     </div>
 
                     <div class="input-block">
-                        <label for="renda">Renda Disponível</label>
-                        <input type="number" placeholder="Qual sua renda disponível?" />
+                        <label asp-for="RendaDisponivel">Renda Disponível</label>
+                        <input asp-for="RendaDisponivel" type="number" placeholder="Qual sua renda disponível?" />
                     </div>
 
                     <div class="input-block">
@@ -65,19 +61,16 @@
                     </div>
 
                     <div class="input-block">
-                        <label for="cidade">Cidade</label>
-                        <input type="text" placeholder="Digite sua cidade" />
+                        <label asp-for="Cidade">Cidade</label>
+                        <input asp-for="Cidade" type="text" placeholder="Digite sua cidade" />
                     </div>
 
                     <div class="input-block">
-                        <label for="uf">UF</label>
-                        <input type="text" placeholder="Digite o Estado" />
+                        <label asp-for="UF">UF</label>
+                        <input asp-for="UF" type="text" placeholder="Digite o Estado" />
                     </div>
-          
-
-
-              
-                <input type="submit" class="btn-login" value="Cadastrar" />
+                
+                <input type="submit" @*class="btn-login"*@ value="Cadastrar" />
 
             </form>
         </div>

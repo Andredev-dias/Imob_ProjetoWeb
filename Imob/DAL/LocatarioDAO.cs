@@ -34,15 +34,10 @@ namespace Imob.DAL
             return false;
         }
 
-        public bool Atualizar(Locatario locatario)
-        {
-            if (BuscarPorId(locatario.Id) != null)
-            {
-                _context.Locatarios.Update(locatario);
-                _context.SaveChanges();
-                return true;
-            }
-            return false;
+        public void Atualizar(Locatario locatario)
+        {            
+            _context.Locatarios.Update(locatario);
+            _context.SaveChanges();
         }
         public void Remover(int id)
         {
