@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Imob.Models
 {
@@ -18,7 +14,6 @@ namespace Imob.Models
         [ForeignKey("TipoImovelId")]
         [Required(ErrorMessage = "Tipo do imóvel é obrigatório!")]
         public int TipoImovelId { get; set; }
-
           
         [Required(ErrorMessage = "Cidade é obrigatório!")]
         public string Cidade { get; set; }
@@ -36,7 +31,6 @@ namespace Imob.Models
         public double Area { get; set; }
 
         public string Imagem { get; set; }
-
 
         public virtual TipoImovel TipoImovel { get; set; }
     }
