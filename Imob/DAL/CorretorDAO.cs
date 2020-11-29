@@ -11,32 +11,9 @@ namespace Imob.DAL
         private readonly Context _context;
 
         public CorretorDAO(Context context) => _context = context;
-        public Corretor BuscarPorNome(string nome) =>
-            _context.Corretores.FirstOrDefault(x => x.Nome == nome);
-
-        public bool BuscarPorCpf(string cpf)
-        {
-            var x = _context.Corretores.FirstOrDefault(x => x.Cpf == cpf);
-            if (x != null)
-            {
-                return false;
-            }
-            return true;
-        }
 
         public Corretor BuscarPorId(int id) =>
             _context.Corretores.Find(id);
-
-        public bool Cadastrar(Corretor corretor)
-        {
-            if (BuscarPorNome(corretor.Nome) == null)
-            {
-                _context.Corretores.Add(corretor);
-                _context.SaveChanges();
-                return true;
-            }
-            return false;
-        }
 
         public void Atualizar(Corretor corretor)
         {
@@ -53,5 +30,32 @@ namespace Imob.DAL
         public List<Corretor> FiltrarPorParteNome(string parteNome) =>
             _context.Corretores.Where(x => x.Nome.Contains(parteNome)).ToList();
         public List<Corretor> Listar() => _context.Corretores.ToList();
+              
+        public Corretor BuscarPorNome(string nome) =>
+            _context.Corretores.FirstOrDefault(x => x.Nome == nome);
+
+        public bool BuscarPorCpf(string cpf)
+        {
+            var x = _context.Corretores.FirstOrDefault(x => x.Cpf == cpf);
+            if (x != null)
+            {
+                return false;
+            }
+            return true;
+        }
+        
+        public void Cadastrar(Corretor corretor)
+        {
+            _context.Corretores.Add(corretor);
+            _context.SaveChanges();
+            /*
+            if (BuscarPorNome(corretor.Nome) == null)
+            {
+                _context.Corretores.Add(corretor);
+                _context.SaveChanges();
+            }
+            */
+        }
+        
     }
 }
