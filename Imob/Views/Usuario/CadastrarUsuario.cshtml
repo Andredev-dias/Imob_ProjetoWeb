@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model Imob.Models.UsuarioLogado
+
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="utf-8" />
@@ -17,7 +19,7 @@
             <header>
                 <i class="fab fa-battle-net"></i>
                 <h1>Cadastre um Usuário</h1>
-                <a href="#"><i class="fas fa-arrow-left"></i></a>
+                <a asp-action="InicialMenu" asp-controller="Home"><i class="fas fa-arrow-left"></i></a>
             </header>
 
             <footer>
@@ -29,20 +31,20 @@
 
 
         <div class="form-wrapper">
-            <form>
+            <form asp-action="CadastrarUsuario">
                 <div class="input-block">
-                    <label for="login-email">Email</label>
-                    <input type="email" id="login-email" />
+                    <label asp-for="Email">Email</label>
+                    <input asp-for="Email" type="email" id="login-email" />
                 </div>
                 <div class="input-block">
-                    <label for="login-password">Password</label>
-                    <input type="password" id="login-password" />
+                    <label asp-for="Senha">Password</label>
+                    <input asp-for="Senha" type="password" id="login-password" />
                 </div>
                 <div class="input-block">
-                    <label for="login-password-confirm">Confirm Password</label>
-                    <input type="password" id="login-password-confirm" />
+                    <label asp-for="ConfirmacaoSenha">Confirm Password</label>
+                    <input asp-for="ConfirmacaoSenha" type="password" id="login-password-confirm" />
                 </div>
-                <input type="submit" class="btn-login" value="Cadastrar Usuário" />
+                <input type="submit" @*class="btn-login"*@ value="Cadastrar Usuário" />
 
             </form>
         </div>
