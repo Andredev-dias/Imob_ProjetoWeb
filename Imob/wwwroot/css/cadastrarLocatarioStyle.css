@@ -207,8 +207,6 @@ form {
         border-radius: 25px;
         margin: 0 auto;
         padding: 7px;
-        z-index: 800;
-       
         border: solid 1.5px var(--escuro);
         animation: btn 4s ease-in-out;
     }
@@ -218,6 +216,7 @@ form {
             border: solid 1.5px var(--verde);
             cursor: pointer;
         }
+    
 
 .btn-CEP {
     background: none;

@@ -15,6 +15,12 @@ namespace Imob.DAL
         public Corretor BuscarPorId(int id) =>
             _context.Corretores.Find(id);
 
+        public void Cadastrar(Corretor corretor)
+        {
+            _context.Corretores.Add(corretor);
+            _context.SaveChanges();
+        }
+
         public void Atualizar(Corretor corretor)
         {
             _context.Corretores.Update(corretor);
@@ -43,19 +49,6 @@ namespace Imob.DAL
             }
             return true;
         }
-        
-        public void Cadastrar(Corretor corretor)
-        {
-            _context.Corretores.Add(corretor);
-            _context.SaveChanges();
-            /*
-            if (BuscarPorNome(corretor.Nome) == null)
-            {
-                _context.Corretores.Add(corretor);
-                _context.SaveChanges();
-            }
-            */
-        }
-        
+                
     }
 }
