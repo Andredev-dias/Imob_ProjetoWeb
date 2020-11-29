@@ -16,7 +16,6 @@ namespace Imob.Controllers
 
         public CorretorController(CorretorDAO corretorDAO,
             IWebHostEnvironment hosting)
-
         {
             _corretorDAO = corretorDAO;
             _hosting = hosting;
@@ -34,8 +33,15 @@ namespace Imob.Controllers
             return View();
         }
 
+        [HttpPost]
         public IActionResult CadastrarCorretor(Corretor corretor)
-        {
+        {            
+            if (ModelState.IsValid)
+            {
+                _corretorDAO.Cadastrar(corretor);
+                return RedirectToAction("ListaCorretores", "Corretores");
+            }
+       
             return View(corretor);
         }
 
@@ -49,14 +55,14 @@ namespace Imob.Controllers
         public IActionResult EditarCorretor(Corretor corretor)
         {   
             _corretorDAO.Atualizar(corretor);
-            return RedirectToAction("ListaCorretores");
+            return RedirectToAction("ListaCorretores", "Corretores");
         }
         
         // Remover
         public IActionResult Remover(int id)
         {
             _corretorDAO.Remover(id);
-            return RedirectToAction("ListaCorretores");
+            return RedirectToAction("ListaCorretores", "Corretores");
         }
 
         /*
