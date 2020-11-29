@@ -26,7 +26,7 @@ namespace Imob.Models
 
         [Required(ErrorMessage = "Selecione um corretor!")]
         public int CorretorId { get; set; }
-
+        public string Arquivo { get; set; }
         public virtual Imovel Imovel { get; set; }
         public virtual Locatario Locatario { get; set; }
         public virtual Corretor Corretor { get; set; }
