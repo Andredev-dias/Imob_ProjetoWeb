@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model List<Imob.Models.Imovel>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="utf-8" />
@@ -16,15 +17,11 @@
                 <h1>Lista de Imóveis</h1>
                 <a asp-action="InicialMenu" asp-controller="Home"><i class="fas fa-arrow-left"></i></a>
             </header>
-
             <footer>
                 <strong>Imob</strong>
                 <span>Imóveis</span>
             </footer>
         </aside>
-
-
-
         <div class="topoDaLista">
             <h4 class="h4add">Adicionar</h4>
             <a class="btn-cad"><i class="fas fa-plus"></i></a>
@@ -42,24 +39,35 @@
             </div>
             <a class="btn-buscar"><i class="fas fa-search-plus"></i></a>
         </div>
-
-        <div class="card-deck">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
+        <div class="card-box">
+            <div class="row row-cols-1 row-cols-md-3">
+                @foreach (Imob.Models.Imovel imovelLista in Model)
+                {
+                    <div class="col mb-3">
+                        <div class="card">
+                            <img src="@imovelLista.Imagem" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">@imovelLista.TipoImovel.Descricao</h5>
+                                <p class="card-text">
+                                    @imovelLista.Endereco - @imovelLista.Cidade/@imovelLista.UF
+                                </p>
+                                <p class="card-title" style="color:var(--verde)">
+                                    R$@imovelLista.ValorAluguel
+                                </p>
+                                @if (imovelLista.Locado)
+                                {
+                                    <p class="card-text"><small class="text-muted">Locado</small></p>
+                                }
+                                else
+                                {
+                                    <p class="card-text"><small class="text-muted">Disponível</small></p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
-
         </div>
-
-
-
-        </div>
-
-
-
+    </div>
 </body>
 </html>

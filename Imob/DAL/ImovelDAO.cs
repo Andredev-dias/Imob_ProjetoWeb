@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Imob.DAL
 {
-    class ImovelDAO
+    public class ImovelDAO
     {
               private readonly Context _context;
 

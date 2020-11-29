@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <Folder Include="ContratosPDF\" />
+    <Folder Include="Data\" />
   </ItemGroup>
 
   <ItemGroup>
