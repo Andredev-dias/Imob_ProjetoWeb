@@ -24,32 +24,32 @@
         <table class="tabelaClasse">
             <div class="topoDaLista">
                 <h4 class="h4add">Adicionar</h4>
-                <a class="btn-cad"><i class="fas fa-plus"></i></a>
+                <a asp-action="CadastrarContrato" asp-controller="Contrato" class="btn-cad"><i class="fas fa-plus"></i></a>
             </div>
             <thead>
                 <tr>
-                    <th class="th_classeEMAIL">Locatario</th>
-                    <th class="th_classeEMAIL">Corretor</th>
-                    <th class="th_classeEMAIL">Endereço</th>
-                    <th class="th_classeEMAIL">Data Vencimento</th>
-                    <th class="th_classeEMAIL">Aluguel</th>
-                    <th class="th_classeEMAIL"></th>
-                    <th class="th_classeEMAIL"></th>
+                    <th class="th_classelocatario">Locatario</th>
+                    <th class="th_classecorretor">Corretor</th>
+                    <th class="th_classeendereco">Endereço</th>
+                    <th class="th_classedatavencimento">Data Vencimento</th>
+                    <th class="th_classealuguel">Aluguel</th>
+                    <th class="th_classe"></th>
+                    <th class="th_classe"></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (Imob.Models.Contrato contratoLista in Model)
                 {
                 <tr class="tr_classe">
-                    <td class="td_classeEMAIL">@contratoLista.Locatario.Nome</td>
-                    <td class="td_classeEMAIL">@contratoLista.Corretor.Nome</td>
-                    <td class="td_classeEMAIL">@contratoLista.Imovel.Endereco</td>
-                    <td class="td_classeEMAIL">@contratoLista.DataVencimento</td>
-                    <td class="td_classeEMAIL">@contratoLista.ValorAluguel</td>
-                    <td class="td_classeEMAIL">@contratoLista.path</td>
+                    <td class="td_classelocatario">@contratoLista.Locatario.Nome</td>
+                    <td class="td_classenomecorretor">@contratoLista.Corretor.Nome</td>
+                    <td class="td_classeenderecoimovel">@contratoLista.Imovel.Endereco</td>
+                    <td class="td_classedddvvv">@contratoLista.DataVencimento</td>
+                    <td class="td_classevaloralguelvvv">@contratoLista.ValorAluguel</td>
+                   
                     <td>
-                        <a asp-action="Download" asp-controller="Contrato" asp-route-id="@contratoLista.Id" class="btn-remover">
-                            GERAR PDF
+                        <a asp-action="Download" asp-controller="Contrato" asp-route-id="@contratoLista.Id" class="btn-pdf">
+                            <i class="far fa-file-pdf"></i>
                         </a>
                     </td>
                 </tr>

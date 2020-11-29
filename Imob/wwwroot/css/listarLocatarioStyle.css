@@ -46,7 +46,7 @@ body {
             font-size: 100px;
             line-height: 28px;
             margin-top: 24px;
-            text-shadow: 0 0.5px 20px;
+            text-shadow: 0 0.5px 10px;
             animation: fromRight 3.5s cubic-bezier(0, 0.2, 0.8,1);
         }
         #page aside a i {
@@ -119,6 +119,7 @@ body {
 }
 
 .tabelaClasse {
+    overflow-y: auto;
     width: 1200px;
     height: 600px;
     background: var(--claro);
@@ -131,7 +132,7 @@ body {
     flex-direction: column;
     justify-content: left;
     align-items: inherit;
-    padding: 40px 50px 40px 40px;
+    padding: 40px 50px 40px 70px;
     border-radius: 5px;
 }
 
@@ -247,10 +248,11 @@ td{
     border-bottom: 4px solid var(--escuro);
 }
 .btn-remover {
+    text-decoration: none;
     width: 50px;
     font-weight: 900;
-    font-size: 18px;
-    color: var(--escuro);
+    font-size: 26px;
+    color: brown;
     margin-left: 15%;
 }
     .btn-remover::after {
@@ -261,6 +263,7 @@ td{
         background: brown;
         transition: width .2s;
         margin-left: 15%;
+       
     }
 
     .btn-remover:hover::after {
@@ -276,10 +279,11 @@ td{
 
 
 .btn-alterar {
+    text-decoration: none;
     width: 50px;
-    font-size: 18px;
+    font-size: 26px;
     font-weight: 900;
-    color: var(--escuro);
+    color: coral;
     margin-left: 30%;
 }
  .btn-alterar:hover {
@@ -358,3 +362,93 @@ td{
     width: 450px;
     text-align: left;
 }
+
+
+.th_classelocatario {
+    text-align: left;
+    width: 250px;
+    padding-left: 0px;
+    color: var(--verde);
+}
+
+.th_classecorretor {
+    text-align: left;
+    width: 250px;
+    padding-left: 100px;
+    color: var(--verde);
+}
+
+.th_classeendereco {
+    text-align: left;
+    width: 250px;
+    padding-left: 100px;
+    color: var(--verde);
+}
+
+.th_classedatavencimento {
+    text-align: left;
+    width: 250px;
+    padding-left: 89px;
+    color: var(--verde);
+}
+
+.th_classealuguel {
+    text-align: right;
+    width: 150px;
+    padding-left:60px;
+    color: var(--verde);
+}
+
+
+
+.td_classelocatario {
+    color: var(--branco);
+    text-align: left;
+    width: 250px;
+    border-bottom: 4px solid var(--escuro);
+}
+
+.td_classenomecorretor {
+    color: var(--branco);
+    text-align: left;
+    width: 250px;
+    border-bottom: 4px solid var(--escuro);
+}
+
+.td_classeenderecoimovel {
+    color: var(--branco);
+    text-align: left;
+    width: 250px;
+    border-bottom: 4px solid var(--escuro);
+}
+
+.td_classedddvvv {
+    color: var(--branco);
+    text-align: left;
+    width: 250px;
+    border-bottom: 4px solid var(--escuro);
+}
+
+.td_classevaloralguelvvv {
+    color: var(--branco);
+    text-align: left;
+    width:150px;
+    border-bottom: 4px solid var(--escuro);
+}
+
+.btn-pdf {
+
+    text-decoration: none;
+    width:50px;
+    font-weight: 900;
+    font-size: 26px;
+    color: var(--escuro);
+    margin-left: 20%;
+}
+
+
+    .btn-pdf:hover {
+        cursor: pointer;
+        color: var(--verde);
+        
+    }

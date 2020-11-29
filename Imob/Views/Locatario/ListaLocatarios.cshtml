@@ -61,12 +61,12 @@
                     <td class="td_classe">@locatarioCadastrado.RendaDisponivel</td>
                     <td>
                         <a asp-action="Remover" asp-controller="Locatario" asp-route-id="@locatarioCadastrado.Id" class="btn-remover">
-                            EXCLUIR
+                            <i class="far fa-trash-alt"></i>
                         </a>
                     </td>
                     <td>
                         <a asp-action="EditarLocatario" asp-controller="Locatario" asp-route-id="@locatarioCadastrado.Id" class="btn-alterar">
-                            EDITAR
+                            <i class="far fa-edit"></i>
                         </a>
                     </td>
                 </tr>
