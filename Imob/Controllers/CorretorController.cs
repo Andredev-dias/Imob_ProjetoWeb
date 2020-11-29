@@ -28,21 +28,13 @@ namespace Imob.Controllers
         }
 
         // Cadastrar
-        public IActionResult CadastrarCorretor()
-        {
-            return View();
-        }
+        public IActionResult CadastrarCorretor() => View();
 
         [HttpPost]
         public IActionResult CadastrarCorretor(Corretor corretor)
-        {            
-            if (ModelState.IsValid)
-            {
-                _corretorDAO.Cadastrar(corretor);
-                return RedirectToAction("ListaCorretores", "Corretores");
-            }
-       
-            return View(corretor);
+        {
+            _corretorDAO.Cadastrar(corretor);
+            return RedirectToAction("ListaCorretores", "Corretor");
         }
 
         // Atualizar
@@ -55,21 +47,15 @@ namespace Imob.Controllers
         public IActionResult EditarCorretor(Corretor corretor)
         {   
             _corretorDAO.Atualizar(corretor);
-            return RedirectToAction("ListaCorretores", "Corretores");
+            return RedirectToAction("ListaCorretores", "Corretor");
         }
         
         // Remover
         public IActionResult Remover(int id)
         {
             _corretorDAO.Remover(id);
-            return RedirectToAction("ListaCorretores", "Corretores");
+            return RedirectToAction("ListaCorretores", "Corretor");
         }
 
-        /*
-        public IActionResult EditarCorretor()
-        {
-            return View();
-        }
-        */
     }
 }

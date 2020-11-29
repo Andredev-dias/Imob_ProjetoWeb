@@ -20,26 +20,40 @@ namespace Imob.Controllers
         }
         public IActionResult ListaLocatarios()
         {
-            List<Locatario> locatario = _locatarioDAO.Listar();
-            return View(locatario);
+            List<Locatario> locatarios = _locatarioDAO.Listar();
+            return View(locatarios);
         }
 
         // Cadastrar
-        public IActionResult CadastrarLocatario()
+        public IActionResult CadastrarLocatario() => View();
+
+        [HttpPost]
+        public IActionResult CadastrarLocatario(Locatario locatario)
         {
-            return View();
+            _locatarioDAO.Cadastrar(locatario);
+            return RedirectToAction("ListaLocatarios", "Locatario");
         }
-        
+
+        // Atualizar
+
+        public IActionResult EditarLocatario(int id)
+        {
+            return View(_locatarioDAO.BuscarPorId(id));
+        }
+
+        [HttpPost]
+        public IActionResult EditarLocatario(Locatario locatario)
+        {
+            _locatarioDAO.Atualizar(locatario);
+            return RedirectToAction("ListaLocatarios", "Locatario");
+        }
+
         //Remover
         public IActionResult Remover(int id)
         {
             _locatarioDAO.Remover(id);
-            return RedirectToAction("ListaLocatarios");
+            return RedirectToAction("ListaLocatarios", "Locatario");
         }
 
-        public IActionResult EditarLocatario()
-        {
-            return View();
-        }
     }
 }
