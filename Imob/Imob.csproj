@@ -5,12 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ContratosPDF\**" />
     <Compile Remove="NovaPasta1\**" />
     <Compile Remove="Views\NovaPasta\**" />
+    <Content Remove="ContratosPDF\**" />
     <Content Remove="NovaPasta1\**" />
     <Content Remove="Views\NovaPasta\**" />
+    <EmbeddedResource Remove="ContratosPDF\**" />
     <EmbeddedResource Remove="NovaPasta1\**" />
     <EmbeddedResource Remove="Views\NovaPasta\**" />
+    <None Remove="ContratosPDF\**" />
     <None Remove="NovaPasta1\**" />
     <None Remove="Views\NovaPasta\**" />
   </ItemGroup>
@@ -18,11 +22,6 @@
   <ItemGroup>
     <Content Remove="wwwroot\js\scriptCadastrarLocatario.js" />
     <Content Remove="wwwroot\js\scriptListaLocatarios.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ContratosPDF\" />
-    <Folder Include="Data\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,6 +40,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="RestSharp" Version="106.11.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\Contratos\contratoTeste.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

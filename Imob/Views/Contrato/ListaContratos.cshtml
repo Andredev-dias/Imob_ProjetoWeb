@@ -1,0 +1,61 @@
+﻿@model List<Imob.Models.Contrato>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imob</title>
+    <link rel="stylesheet" href="~/css/listarLocatarioStyle.css" />
+    <script src="https://kit.fontawesome.com/0aa0d458c6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="page">
+        <aside>
+            <header>
+                <i class="fas fa-file-signature"></i>
+                <h1>Lista de Contratos</h1>
+                <a asp-action="InicialMenu" asp-controller="Home"><i class="fas fa-arrow-left"></i></a>
+            </header>
+            <footer>
+                <strong>Imob</strong>
+                <span>Imóveis</span>
+            </footer>
+        </aside>
+        <table class="tabelaClasse">
+            <div class="topoDaLista">
+                <h4 class="h4add">Adicionar</h4>
+                <a class="btn-cad"><i class="fas fa-plus"></i></a>
+            </div>
+            <thead>
+                <tr>
+                    <th class="th_classeEMAIL">Locatario</th>
+                    <th class="th_classeEMAIL">Corretor</th>
+                    <th class="th_classeEMAIL">Endereço</th>
+                    <th class="th_classeEMAIL">Data Vencimento</th>
+                    <th class="th_classeEMAIL">Aluguel</th>
+                    <th class="th_classeEMAIL"></th>
+                    <th class="th_classeEMAIL"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Imob.Models.Contrato contratoLista in Model)
+                {
+                <tr class="tr_classe">
+                    <td class="td_classeEMAIL">@contratoLista.Locatario.Nome</td>
+                    <td class="td_classeEMAIL">@contratoLista.Corretor.Nome</td>
+                    <td class="td_classeEMAIL">@contratoLista.Imovel.Endereco</td>
+                    <td class="td_classeEMAIL">@contratoLista.DataVencimento</td>
+                    <td class="td_classeEMAIL">@contratoLista.ValorAluguel</td>
+                    <td class="td_classeEMAIL">@contratoLista.path</td>
+                    <td>
+                        <a asp-action="Download" asp-controller="Contrato" asp-route-id="@contratoLista.Id" class="btn-remover">
+                            GERAR PDF
+                        </a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Imob.DAL
 {
-    class ContratoDAO
+    public class ContratoDAO
     {
         private readonly Context _context;
 

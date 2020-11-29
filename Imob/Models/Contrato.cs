@@ -26,6 +26,9 @@ namespace Imob.Models
 
         [Required(ErrorMessage = "Selecione um corretor!")]
         public int CorretorId { get; set; }
+        public string Arquivo { get; set; }
+        [NotMapped]
+        public string path { get; set; }
 
         public virtual Imovel Imovel { get; set; }
         public virtual Locatario Locatario { get; set; }
