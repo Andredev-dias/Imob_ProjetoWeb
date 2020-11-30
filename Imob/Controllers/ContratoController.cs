@@ -31,7 +31,6 @@ namespace Imob.Controllers
         public IActionResult ListaContratos(){
             List<Contrato> contratos;
             contratos = _contratoDAO.Listar();
-          
             return View(contratos);
         }
 
