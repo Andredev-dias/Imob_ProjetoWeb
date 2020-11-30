@@ -32,7 +32,7 @@ namespace Imob.Controllers
             return View();
         }
 
-        // POST: Usuario/Create
+        // POST: Usuario/CadastrarUsuario
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -67,20 +67,20 @@ namespace Imob.Controllers
                 ModelState.AddModelError("", erro.Description);
             }
         }
-        public IActionResult Login()
+        public IActionResult InicialMenu()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login([Bind("Email, Senha")] UsuarioLogado usuarioLogado)
+        public async Task<IActionResult> InicialMenu([Bind("Email, Senha")] UsuarioLogado usuarioLogado)
         {
             var result = await _signInManager.PasswordSignInAsync(usuarioLogado.Email, usuarioLogado.Senha, false, false);
 
             var name = User.Identity.Name;
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Produto"); // CORRIGIR APONTAMENTO DE PÁGINA
+                return RedirectToAction("InicialMenu", "Home");
             }
             ModelState.AddModelError("", "Login ou senha inválidos!");
             return View(usuarioLogado);

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model Imob.Models.UsuarioLogado
+
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="utf-8" />
@@ -15,16 +17,16 @@
 
 
         <div class="form-wrapper">
-            <form  asp-action="InicialMenu" asp-controller="Home">
+            <form  asp-action="InicialMenu" asp-controller="Usuario">
                 <div class="input-block">
-                    <label for="login-email">Email</label>
-                    <input type="email" id="login-email" />
+                    <label asp-for="Email">Email</label>
+                    <input asp-for="Email" type="email" id="login-email" />
                 </div>
                 <div class="input-block">
-                    <label for="login-password">Password</label>
-                    <input type="password" id="login-password" />
+                    <label asp-for="Senha" for="login-password">Password</label>
+                    <input asp-for="Senha" type="password" id="login-password" />
                 </div>
-                <input  type="submit" class="btn-login" value="Login" />
+                <input  type="submit" @*class="btn-login"*@ value="Login" />
                
             </form>
         </div>
