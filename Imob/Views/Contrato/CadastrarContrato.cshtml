@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="~/css/contratoPageStyle.css" />
 
     <script src="https://kit.fontawesome.com/0aa0d458c6.js" crossorigin="anonymous"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.mask.min.js"></script>
 </head>
 <body>
 
@@ -18,7 +20,7 @@
             <header>
                 <i class="fas fa-file-signature"></i>
                 <h1>Realize um Contrato</h1>
-                <a asp-action="InicialMenu" asp-controller="Home"><i class="fas fa-arrow-left"></i></a>
+                <a asp-action="ListaContratos" asp-controller="Contrato"><i class="fas fa-arrow-left"></i></a>
             </header>
 
             <footer>
@@ -65,12 +67,12 @@
 
                 <div class="input-block">
                     <label for="dtavenc">Data de vencimento</label>
-                    <input type="number" placeholder="Informe um vencimento para o contrato." />
+                    <input type="date" placeholder="Informe um vencimento para o contrato." />
                 </div>
 
 
 
-                <input type="submit" class="btn-login" value="Gerar PDF" />
+                <input type="submit" class="btn-login" value="Salvar" />
 
             </form>
         </div>
@@ -80,5 +82,6 @@
     <ul class="squares">
     </ul>
     <script src="~/js/login.js"></script>
+  
 </body>
 </html>

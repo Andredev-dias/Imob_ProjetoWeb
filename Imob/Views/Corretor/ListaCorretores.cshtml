@@ -16,7 +16,7 @@
     <div id="page">
         <aside>
             <header>
-                <i class="far fa-address-card"></i>
+                <i class="fas fa-business-time"></i>
                 <h1>Lista de Corretores</h1>
                 <a asp-action="InicialMenu" asp-controller="Home"><i class="fas fa-arrow-left"></i></a>
             </header>
@@ -65,12 +65,12 @@
                         <td class="td_classe">@corretorCadastrado.Cofeci</td>
                         <td>
                             <a asp-action="Remover" asp-controller="Corretor" asp-route-id="@corretorCadastrado.Id" class="btn-remover">
-                                EXCLUIR
+                                <i class="far fa-trash-alt"></i>
                             </a>
                         </td>
                         <td>
                             <a asp-action="EditarCorretor" asp-controller="Corretor" asp-route-id="@corretorCadastrado.Id" class="btn-alterar">
-                                EDITAR
+                                <i class="far fa-edit"></i>
                             </a>
                         </td>
                     </tr>

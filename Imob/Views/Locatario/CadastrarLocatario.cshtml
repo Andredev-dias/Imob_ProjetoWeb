@@ -7,16 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Imob</title>
     <link rel="stylesheet" href="~/css/cadastrarLocatarioStyle.css" />
-    
     <script src="https://kit.fontawesome.com/0aa0d458c6.js" crossorigin="anonymous"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.mask.min.js"></script>
+
+
+
 </head>
 <body>
 
-    
+
     <div id="page">
         <aside>
             <header>
-                <i class="far fa-address-card" ></i>
+                <i class="far fa-address-card"></i>
                 <h1>Cadastre um novo Locatário</h1>
                 <a asp-action="ListaLocatarios" asp-controller="Locatario"><i class="fas fa-arrow-left"></i></a>
             </header>
@@ -28,57 +32,65 @@
         </aside>
 
         <div class="form-wrapper">
-            <form asp-action="CadastrarLocatario" asp-controller="Locatario" method="post">              
-                    <div class="input-block">
-                        <label asp-for="Nome">Nome</label>
-                        <input asp-for="Nome" type="text" placeholder="Insira seu nome" />
-                    </div>
+            <form asp-action="CadastrarLocatario" asp-controller="Locatario" method="post">
+                <div class="input-block">
+                    <label asp-for="Nome">Nome</label>
+                    <input asp-for="Nome" type="text" placeholder="Insira seu nome" />
+                </div>
 
-                      <div class="input-block">
-                        <label asp-for="Cpf">CPF</label>
-                        <input asp-for="Cpf" type="number" placeholder="Informe seu CPF" />
-                    </div>
+                <div class="input-block">
+                    <label asp-for="Cpf">CPF</label>
+                    <input asp-for="Cpf" type="text" placeholder="Informe seu CPF" id="cpf" />
+                </div>
 
-                    <div class="input-block">
-                        <label asp-for="Telefone">Telefone</label>
-                        <input asp-for="Telefone" type="number" placeholder="Telefone pessoal" />
-                    </div>               
-           
-                    <div class="input-block">
-                        <label asp-for="Email">E-mail</label>
-                        <input asp-for="Email" type="text" placeholder="Informe seu e-mail" />
-                    </div>
+                <div class="input-block">
+                    <label asp-for="Telefone">Telefone</label>
+                    <input asp-for="Telefone" type="text" placeholder="Telefone pessoal" id="telefone" />
+                </div>
 
-                    <div class="input-block">
-                        <label asp-for="RendaDisponivel">Renda Disponível</label>
-                        <input asp-for="RendaDisponivel" type="number" placeholder="Qual sua renda disponível?" />
-                    </div>
+                <div class="input-block">
+                    <label asp-for="Email">E-mail</label>
+                    <input asp-for="Email" type="text" placeholder="Informe seu e-mail" />
+                </div>
 
-                    <div class="input-block">
-                        <label for="cep">CEP</label>
-                        <input type="number" placeholder="Informe o CEP de sua cidade" />
-                        <button type="button" class="btn-CEP"><i class="far fa-arrow-alt-circle-down"></i></button>
-                    </div>
+                <div class="input-block">
+                    <label asp-for="RendaDisponivel">Renda Disponível</label>
+                    <input asp-for="RendaDisponivel" type="text" placeholder="Qual sua renda disponível?" />
+                </div>
 
-                    <div class="input-block">
-                        <label asp-for="Cidade">Cidade</label>
-                        <input asp-for="Cidade" type="text" placeholder="Digite sua cidade" />
-                    </div>
+                <div class="input-block">
+                    <label for="cep">CEP</label>
+                    <input type="text" placeholder="Informe o CEP de sua cidade" id="cep" />
+                    <button type="button" class="btn-CEP"><i class="far fa-arrow-alt-circle-down"></i></button>
+                </div>
 
-                    <div class="input-block">
-                        <label asp-for="UF">UF</label>
-                        <input asp-for="UF" type="text" placeholder="Digite o Estado" />
-                    </div>
-                
+                <div class="input-block">
+                    <label asp-for="Cidade">Cidade</label>
+                    <input asp-for="Cidade" type="text" placeholder="Digite sua cidade" />
+                </div>
+
+                <div class="input-block">
+                    <label asp-for="UF">UF</label>
+                    <input asp-for="UF" type="text" placeholder="Digite o Estado" />
+                </div>
+
                 <input type="submit" @*class="btn-login"*@ value="Cadastrar" />
 
             </form>
         </div>
     </div>
-    
+
 
     <ul class="squares">
     </ul>
     <script src="~/js/login.js"></script>
+    <script type="text/javascript">
+
+        $("#cpf").mask("000.000.000-00")
+        $("#telefone").mask("(00) 00000-0000")
+        $("#cep").mask("00.000-000")
+
+    </script>
+
 </body>
 </html>
