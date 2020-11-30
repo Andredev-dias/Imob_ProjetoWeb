@@ -14,8 +14,8 @@
     <div id="page">
         <aside>
             <header>
-                <i class="far fa-address-card"></i>
-                <h1>Lista de Locatários</h1>
+                <i class="fab fa-battle-net"></i>
+                <h1>Lista de Usuários do sistema</h1>
                 <a asp-action="InicialMenu" asp-controller="Home"><i class="fas fa-arrow-left"></i></a>
             </header>
             <footer>
@@ -28,14 +28,13 @@
             <div class="topoDaLista">
                 <h4 class="h4add">Adicionar</h4>
                 <a asp-action="CadastrarUsuario" asp-controller="Usuario" class="btn-cad"><i class="fas fa-plus"></i></a>
-                <input class="inputDoSearch" type="text" placeholder="Digite o nome do usuário para busca!" />
-                <a class="btn-buscar"><i class="fas fa-search-plus"></i></a>
+               
             </div>
             <thead>
                 <tr>
-                    <th class="th_classeEMAIL">@Html.DisplayNameFor(model => model.Email)</th>
-                    <th class="th_classe">@Html.DisplayNameFor(model => model.Senha)</th>
-                    <th class="th_classe">@Html.DisplayNameFor(model => model.CriadoEm)</th>
+                    <th class="th_USU">@Html.DisplayNameFor(model => model.Email)</th>
+                    <th class="th_USU1">@Html.DisplayNameFor(model => model.Senha)</th>
+                    <th class="th_USU2">@Html.DisplayNameFor(model => model.CriadoEm)</th>
                     <th></th>
                     <th></th>
                     <th></th>
@@ -47,17 +46,17 @@
                 {
 
                 <tr class="tr_classe">
-                    <td class="td_classeEMAIL">@Html.DisplayFor(modelItem => item.Email)</td>
-                    <td class="td_classe">@Html.DisplayFor(modelItem => item.Senha)</td>
-                    <td class="td_classe">@Html.DisplayFor(modelItem => item.CriadoEm)</td>
+                    <td class="td_USU">@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td class="td_USU">@Html.DisplayFor(modelItem => item.Senha)</td>
+                    <td class="td_USU">@Html.DisplayFor(modelItem => item.CriadoEm)</td>
                     <td>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn-remover">EXCLUIR</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn-remover"><i class="far fa-trash-alt"></i></a>
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn-alterar">EDITAR</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn-alterar"> <i class="far fa-edit"></i></a>
                     </td>
                     <td>
-                        <a asp-action="Details" asp-route-id="@item.Id" class="btn-alterar">Detalhar</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn-info"><i class="fas fa-info"></i></a>
                     </td>
                 </tr>
                 }

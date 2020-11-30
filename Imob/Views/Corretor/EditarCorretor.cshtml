@@ -39,52 +39,50 @@
 
                 <div class="input-block">
                     <label asp-for="Nome">Nome</label>
-                    <input asp-for="Nome" type="text" />
+                    <input asp-for="Nome" type="text" required />
                 </div>
 
                 <div class="input-block">
                     <label asp-for="Cpf">CPF</label>
-                    <input asp-for="Cpf" type="number" />
+                    <input asp-for="Cpf" type="number" required />
                 </div>
 
                 <div class="input-block">
                     <label asp-for="Telefone">Telefone</label>
-                    <input asp-for="Telefone" type="number" />
+                    <input asp-for="Telefone" type="number" required />
                 </div>
 
                 <div class="input-block">
                     <label asp-for="Email">E-mail</label>
-                    <input asp-for="Email" type="text" />
+                    <input asp-for="Email" type="text" required />
                 </div>
 
                 <div class="input-block">
                     <label asp-for="Cofeci">COFECI</label>
-                    <input asp-for="Cofeci" type="number" />
+                    <input asp-for="Cofeci" type="number" required />
                 </div>
-                
+
                 <div class="input-block">
                     <label>CEP</label>
-                    <input type="number" />
+                    <input type="number" class="btn-CEP" id="btn-CEP" required />
                 </div>
 
                 <div class="input-block">
                     <label asp-for="Cidade">Cidade</label>
-                    <input asp-for="Cidade" type="text" />
+                    <input asp-for="Cidade" type="text" id="cidade" required />
                 </div>
 
                 <div class="input-block">
                     <label asp-for="UF">UF</label>
-                    <input asp-for="UF" type="text" />
+                    <input asp-for="UF" type="text" id="UF" required />
                 </div>
 
-                <input type="submit" @*class="btn-login"*@ value="Salvar" />
+                <input type="submit"  value="Salvar" />
             </form>
         </div>
     </div>
 
+    <script src="~/js/buscaCep.js"></script>
 
-    <ul class="squares">
-    </ul>
-    <script src="~/js/login.js"></script>
 </body>
 </html>
