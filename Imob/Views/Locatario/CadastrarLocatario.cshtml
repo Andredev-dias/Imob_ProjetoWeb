@@ -39,12 +39,12 @@
 
                 <div class="input-block">
                     <label asp-for="Cpf">CPF</label>
-                    <input asp-for="Cpf" type="number" placeholder="Informe seu CPF" id="cpf" />
+                    <input asp-for="Cpf" type="text" placeholder="Informe seu CPF" id="cpf" />
                 </div>
 
                 <div class="input-block">
                     <label asp-for="Telefone">Telefone</label>
-                    <input asp-for="Telefone" type="number" placeholder="Telefone pessoal" id="telefone" />
+                    <input asp-for="Telefone" type="text" placeholder="Telefone pessoal" id="telefone" />
                 </div>
 
                 <div class="input-block">
@@ -86,6 +86,7 @@
     <script type="text/javascript">
 
         $("#cpf").mask("000.000.000-00")
+        $("#telefone").mask("(00) 00000-0000")
 
     </script>
 
