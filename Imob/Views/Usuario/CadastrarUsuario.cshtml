@@ -19,7 +19,7 @@
             <header>
                 <i class="fab fa-battle-net"></i>
                 <h1>Cadastre um Usuário</h1>
-                <a asp-action="InicialMenu" asp-controller="Home"><i class="fas fa-arrow-left"></i></a>
+                <a asp-action="ListaUsuarios" asp-controller="Usuario"><i class="fas fa-arrow-left"></i></a>
             </header>
 
             <footer>
@@ -28,9 +28,8 @@
             </footer>
         </aside>
 
-
-
         <div class="form-wrapper">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <form asp-action="CadastrarUsuario">
                 <div class="input-block">
                     <label asp-for="Email">Email</label>
@@ -44,7 +43,7 @@
                     <label asp-for="ConfirmacaoSenha">Confirm Password</label>
                     <input asp-for="ConfirmacaoSenha" type="password" id="login-password-confirm" />
                 </div>
-                <input type="submit" @*class="btn-login"*@ value="Cadastrar Usuário" />
+                <input type="submit" @*class="btn-login"*@ value="CadastrarUsuario" />
 
             </form>
         </div>

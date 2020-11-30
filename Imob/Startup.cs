@@ -39,7 +39,7 @@ public void ConfigureServices(IServiceCollection services)
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = "/Usuario/Login";
-                options.AccessDeniedPath = "/Usuario/AcessoNegado";
+                options.AccessDeniedPath = "/Usuario/Login";
             });
 
             services.AddSession();
