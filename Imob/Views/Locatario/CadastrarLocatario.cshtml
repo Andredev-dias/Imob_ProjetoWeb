@@ -11,7 +11,8 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="~/js/jquery.mask.min.js"></script>
 
-   
+
+
 </head>
 <body>
 
@@ -54,12 +55,12 @@
 
                 <div class="input-block">
                     <label asp-for="RendaDisponivel">Renda Disponível</label>
-                    <input asp-for="RendaDisponivel" type="number" placeholder="Qual sua renda disponível?" id="renda" />
+                    <input asp-for="RendaDisponivel" type="text" placeholder="Qual sua renda disponível?" />
                 </div>
 
                 <div class="input-block">
                     <label for="cep">CEP</label>
-                    <input type="number" placeholder="Informe o CEP de sua cidade" id="cep" />
+                    <input type="text" placeholder="Informe o CEP de sua cidade" id="cep" />
                     <button type="button" class="btn-CEP"><i class="far fa-arrow-alt-circle-down"></i></button>
                 </div>
 
@@ -87,6 +88,7 @@
 
         $("#cpf").mask("000.000.000-00")
         $("#telefone").mask("(00) 00000-0000")
+        $("#cep").mask("00.000-000")
 
     </script>
 
