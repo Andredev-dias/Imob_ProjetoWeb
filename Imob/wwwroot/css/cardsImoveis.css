@@ -16,8 +16,8 @@ body {
 }
 
 #page {
-    width: 95vw;
-    height: auto;
+    width: 100vw;
+    height: 100vh;
     position: relative;
     display: flex;
 }
@@ -87,7 +87,7 @@ body {
 .topoDaLista {
     position: absolute;
     top: 5%;
-    left: 30%;
+    left: 20%;
     display: inherit;
     padding: 10px;
 }
@@ -135,17 +135,16 @@ body {
     color: var(--branco);
     margin-right: 40px;
 }
-.form-check-label {
-    font-size: 20px;
-    color: var(--branco);
-   
-}
+
 
 .card-box {
     overflow-y: auto;
+    overflow-x: hidden;
     margin-top: 8%;
-    margin-left: 3%;
+    padding-left: 35px;
+    padding-right: 35px;
     margin-bottom: 1%;
+    width: 100%;
 }
 
 .card{
@@ -157,8 +156,40 @@ body {
 
 .btn-buscar{
     margin-top: -20px;
+   
 }
 
 .card-img-top{
     min-height:33vh;
 }
+
+.btn-remover {
+    text-decoration: none;
+    width: 50px;
+    font-weight: 900;
+    font-size: 30px;
+    color: brown;
+    position:absolute;
+    right: 10px;
+    bottom: 40px;
+}
+
+    .btn-remover::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 4px;
+        background: brown;
+        transition: width .2s;
+        
+    }
+
+    .btn-remover:hover::after {
+        width: 60%;
+        transition: width .3s;
+    }
+
+    .btn-remover:hover {
+        cursor: pointer;
+        color: brown;
+    }

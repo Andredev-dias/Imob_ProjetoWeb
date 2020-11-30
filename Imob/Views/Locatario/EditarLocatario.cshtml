@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Imob</title>
     <link rel="stylesheet" href="~/css/cadastrarLocatarioStyle.css" />
-
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.mask.min.js"></script>
     <script src="https://kit.fontawesome.com/0aa0d458c6.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -37,12 +38,12 @@
 
                 <div class="input-block">
                     <label asp-for="Cpf">CPF</label>
-                    <input asp-for="Cpf" type="number"  />
+                    <input asp-for="Cpf" type="text" id="cpf" />
                 </div>
 
                 <div class="input-block">
                     <label asp-for="Telefone">Telefone</label>
-                    <input asp-for="Telefone" type="number"  />
+                    <input asp-for="Telefone" type="text"  id="telefone" />
                 </div>
 
                 <div class="input-block">
@@ -52,12 +53,12 @@
 
                 <div class="input-block">
                     <label asp-for="RendaDisponivel">Renda Disponível</label>
-                    <input asp-for="RendaDisponivel" type="number"  />
+                    <input asp-for="RendaDisponivel" type="text"  />
                 </div>
 
                 <div class="input-block">
                     <label for="cep">CEP</label>
-                    <input type="number"  />
+                    <input type="text"  id="cep"  />
                 </div>
 
                 <div class="input-block">
@@ -80,5 +81,10 @@
     <ul class="squares">
     </ul>
     <script src="~/js/login.js"></script>
+    <script>
+        $("#cpf").mask("000.000.000-00")
+        $("#telefone").mask("(00) 00000-0000")
+        $("#cep").mask("00000-000")
+    </script>
 </body>
 </html>

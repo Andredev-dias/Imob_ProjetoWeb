@@ -1,6 +1,8 @@
 ﻿using Imob.DAL;
 using Imob.Models;
+using Imob.Utils;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -30,12 +32,20 @@ namespace Imob.Controllers
         [HttpPost]
         public IActionResult CadastrarLocatario(Locatario locatario)
         {
-            _locatarioDAO.Cadastrar(locatario);
-            return RedirectToAction("ListaLocatarios", "Locatario");
+            if (ModelState.IsValid)
+            {
+                if (ValidacaoCpfUtils.ValidarCpf(locatario.Cpf))
+                {
+                    _locatarioDAO.Cadastrar(locatario);
+                    return RedirectToAction("ListaLocatarios", "Locatario");
+                }
+                ModelState.AddModelError("", "CPF Inválido");
+            }
+            ModelState.AddModelError("","Não foi possível cadastrar! Digite todos os campos e tente novamente!");
+            return View(locatario);
         }
 
         // Atualizar
-
         public IActionResult EditarLocatario(int id)
         {
             return View(_locatarioDAO.BuscarPorId(id));

@@ -10,8 +10,6 @@
     <script src="https://kit.fontawesome.com/0aa0d458c6.js" crossorigin="anonymous"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="~/js/jquery.mask.min.js"></script>
-
-   
 </head>
 <body>
 
@@ -54,41 +52,39 @@
 
                 <div class="input-block">
                     <label asp-for="RendaDisponivel">Renda Disponível</label>
-                    <input asp-for="RendaDisponivel" type="number" placeholder="Qual sua renda disponível?" id="renda" />
+                    <input asp-for="RendaDisponivel" type="text" placeholder="Qual sua renda disponível?" />
                 </div>
 
                 <div class="input-block">
                     <label for="cep">CEP</label>
-                    <input type="number" placeholder="Informe o CEP de sua cidade" id="cep" />
-                    <button type="button" class="btn-CEP"><i class="far fa-arrow-alt-circle-down"></i></button>
+                    <input type="text" placeholder="Informe o CEP de sua cidade" id="cep" />
+                    <button type="button" class="btn-CEP" id="btn-CEP"><i class="far fa-arrow-alt-circle-down"></i></button>
                 </div>
 
                 <div class="input-block">
                     <label asp-for="Cidade">Cidade</label>
-                    <input asp-for="Cidade" type="text" placeholder="Digite sua cidade" />
+                    <input asp-for="Cidade" type="text" placeholder="Digite sua cidade" id="cidade" />
                 </div>
 
                 <div class="input-block">
                     <label asp-for="UF">UF</label>
-                    <input asp-for="UF" type="text" placeholder="Digite o Estado" />
+                    <input asp-for="UF" type="text" placeholder="Digite o Estado" id="UF" />
                 </div>
 
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="submit" @*class="btn-login"*@ value="Cadastrar" />
 
             </form>
         </div>
     </div>
-
-
     <ul class="squares">
     </ul>
-    <script src="~/js/login.js"></script>
     <script type="text/javascript">
-
         $("#cpf").mask("000.000.000-00")
         $("#telefone").mask("(00) 00000-0000")
-
+        $("#cep").mask("00000-000")
     </script>
-
+    <script src="~/js/buscaCep.js"></script>
+    <script src="~/js/login.js"></script>
 </body>
 </html>
