@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Imob</title>
     <link rel="stylesheet" href="~/css/cadastrarLocatarioStyle.css" />
-
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.mask.min.js"></script>
     <script src="https://kit.fontawesome.com/0aa0d458c6.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -88,5 +89,8 @@
     <ul class="squares">
     </ul>
     <script src="~/js/login.js"></script>
+    <script>
+        $("#cep").mask("00000-000")
+    </script>
 </body>
 </html>
