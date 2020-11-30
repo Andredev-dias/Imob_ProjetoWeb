@@ -63,7 +63,7 @@
                                     <p class="card-text"><small class="text-muted">Disponível</small></p>
                                 }
 
-                                <a @*asp-action="Remover" asp-controller="Imovel" asp-route-id="@imovelCadastrado.Id"*@ class="btn-remover">
+                                <a asp-action="Remover" asp-controller="Imovel" asp-route-id="@imovelLista.Id" class="btn-remover">
                                     <i class="far fa-trash-alt"></i>
                                 </a>
                             </div>
@@ -73,5 +73,7 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>
+

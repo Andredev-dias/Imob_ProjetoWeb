@@ -64,9 +64,10 @@ namespace Imob.Controllers
          
         }
 
-        public IActionResult EditarImovel()
+        public IActionResult Remover(Imovel imovel, int id)
         {
-            return View();
+            _imovelDAO.Remover(imovel);
+            return RedirectToAction("CardsImoveis", "Imovel");
         }
     }
 }

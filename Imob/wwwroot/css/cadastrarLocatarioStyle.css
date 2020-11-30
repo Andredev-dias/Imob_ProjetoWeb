@@ -198,24 +198,7 @@ form {
             color: var(--branco);
         }
 
-    form .btn-login {
-        display: block;
-        min-width: 120px;
-        border: none;
-        background-color: var(--escuro);
-        color: var(--branco);
-        border-radius: 25px;
-        margin: 0 auto;
-        padding: 7px;
-        border: solid 1.5px var(--escuro);
-        animation: btn 4s ease-in-out;
-    }
 
-        form .btn-login:hover {
-            color: var(--verde);
-            border: solid 1.5px var(--verde);
-            cursor: pointer;
-        }
     
 
 .btn-CEP {
