@@ -34,7 +34,6 @@
                     <th class="th_classeEMAIL">Data Vencimento</th>
                     <th class="th_classeEMAIL">Aluguel</th>
                     <th class="th_classeEMAIL"></th>
-                    <th class="th_classeEMAIL"></th>
                 </tr>
             </thead>
             <tbody>
@@ -46,7 +45,6 @@
                     <td class="td_classeEMAIL">@contratoLista.Imovel.Endereco</td>
                     <td class="td_classeEMAIL">@contratoLista.DataVencimento</td>
                     <td class="td_classeEMAIL">@contratoLista.ValorAluguel</td>
-                    <td class="td_classeEMAIL">@contratoLista.path</td>
                     <td>
                         <a asp-action="Download" asp-controller="Contrato" asp-route-id="@contratoLista.Id" class="btn-remover">
                             GERAR PDF
