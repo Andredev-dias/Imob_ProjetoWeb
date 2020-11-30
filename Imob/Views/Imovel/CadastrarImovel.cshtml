@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model Imob.Models.Imovel
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="utf-8" />
@@ -11,8 +12,6 @@
     <script type="text/javascript" src="~/js/jquery.mask.min.js"></script>
 </head>
 <body>
-
-
     <div id="page">
         <aside>
             <header>
@@ -26,72 +25,65 @@
                 <span>Imóveis</span>
             </footer>
         </aside>
-
-
-
         <div class="form-wrapper">
-            <form>
-
-
+            <form asp-action="CadastrarImovel" asp-controller="Imovel" method="post" enctype="multipart/form-data">
                 <div class="input-block">
                     <label for="cep">CEP</label>
-                    <input type="number" placeholder="Informe o CEP de sua cidade" id="cep"/>
-                    <button type="button" class="btn-CEP"><i class="far fa-arrow-alt-circle-down"></i></button>
+                    <input type="text" placeholder="Informe o CEP de sua cidade" id="cep" />
+                    <button type="button" class="btn-CEP" id="btn-CEP"><i class="far fa-arrow-alt-circle-down"></i></button>
                 </div>
 
                 <div class="input-block">
-                    <label for="cidade">Cidade</label>
-                    <input type="text" placeholder="Digite sua cidade" />
+                    <label asp-for="Cidade" for="cidade">Cidade</label>
+                    <input asp-for="Cidade" type="text" placeholder="Digite sua cidade" id="cidade" />
                 </div>
 
                 <div class="input-block">
-                    <label for="rua">Rua</label>
-                    <input type="text" placeholder="Informe a rua do imóvel" />
+                    <label asp-for="Endereco" for="rua">Rua</label>
+                    <input asp-for="Endereco" type="text" placeholder="Informe a rua do imóvel" id="rua" />
                 </div>
 
                 <div class="input-block">
-                    <label for="uf">UF</label>
-                    <input type="text" placeholder="Digite o Estado" />
-                </div>
-
-
-                <div class="input-block">
-                    <label for="desc">Descrição</label>
-                    <input type="text" placeholder="Descreva o Imóvel sintéticamente" />
-                </div>
-
-
-
-                <div class="input-block">
-                    <label for="area">Àrea</label>
-                    <input type="number" placeholder="Informe a àrea do imóvel" />
+                    <label asp-for="UF" for="uf">UF</label>
+                    <input asp-for="UF" type="text" placeholder="Digite o Estado" id="UF" />
                 </div>
 
                 <div class="input-block">
-                    <label for="valorAluguel">Valor do Aluguel</label>
-                    <input type="number" placeholder="Informe o valor do aluguel" />
+                    <label asp-for="TipoImovel">Tipo Imovel</label>
+                    <select asp-items="@ViewBag.TipoImovel" class="form-control" asp-for="TipoImovelId">
+                        <option> -- SELECIONE -- </option>
+                    </select>
+                </div>
+
+                <div class="input-block">
+                    <label asp-for="Area" for="area">Área</label>
+                    <input asp-for="Area" type="text" placeholder="Informe a àrea do imóvel" />
+                </div>
+
+                <div class="input-block">
+                    <label asp-for="ValorAluguel" for="valorAluguel">Valor do Aluguel</label>
+                    <input asp-for="ValorAluguel" type="text" placeholder="Informe o valor do aluguel" />
                 </div>
 
                 <div class="input-block">
                     <div id="Imagem" class="form-group">
-                        <label for="imagem">Imagem</label>
+                        <label asp-for="Imagem " for="imagem">Imagem</label>
                         <input type="file" class="form-control-file" name="file" />
                     </div>
                 </div>
-
-                <input type="submit" class="btn-login" value="Cadastrar" />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="submit" @*class="btn-login"*@ value="Cadastrar" />
 
             </form>
         </div>
     </div>
-
-
     <ul class="squares">
     </ul>
     <script src="~/js/login.js"></script>
+    <script src="~/js/buscaCep.js"></script>
     <script type="text/javascript">
 
-        $("#cep").mask("00.000-000")
+        $("#cep").mask("00000-000")
 
     </script>
 </body>

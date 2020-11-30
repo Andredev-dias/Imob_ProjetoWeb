@@ -1,6 +1,7 @@
 ﻿var btnCep = document.getElementById("btn-CEP");
 var inputCidade = document.getElementById("cidade");
 var inputUF = document.getElementById("UF");
+var inputRua = document.getElementById("rua");
 
 var url = "";
 
@@ -23,6 +24,7 @@ const buscarCep = () => {
 
             inputCidade.value = json.localidade;
             inputUF.value = json.uf;
+            inputRua.value = json.logradouro;
         })
         .catch(error => console.log(error));
 }
