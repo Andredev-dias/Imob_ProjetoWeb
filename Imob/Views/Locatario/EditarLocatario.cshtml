@@ -33,17 +33,17 @@
 
                 <div class="input-block">
                     <label asp-for="Nome">Nome</label>
-                    <input asp-for="Nome" type="text" />
+                    <input asp-for="Nome" type="text" required />
                 </div>
 
                 <div class="input-block">
                     <label asp-for="Cpf">CPF</label>
-                    <input asp-for="Cpf" type="text" id="cpf" />
+                    <input asp-for="Cpf" type="text" id="cpf" required />
                 </div>
 
                 <div class="input-block">
                     <label asp-for="Telefone">Telefone</label>
-                    <input asp-for="Telefone" type="text"  id="telefone" />
+                    <input asp-for="Telefone" type="text" id="telefone" />
                 </div>
 
                 <div class="input-block">
@@ -53,38 +53,34 @@
 
                 <div class="input-block">
                     <label asp-for="RendaDisponivel">Renda Disponível</label>
-                    <input asp-for="RendaDisponivel" type="text"  />
+                    <input asp-for="RendaDisponivel" type="text" required />
                 </div>
 
                 <div class="input-block">
                     <label for="cep">CEP</label>
-                    <input type="text"  id="cep"  />
+                    <input type="text" class="btn-CEP"  id="btn-CEP" required />
                 </div>
 
                 <div class="input-block">
                     <label asp-for="Cidade">Cidade</label>
-                    <input asp-for="Cidade" type="text"  />
+                    <input asp-for="Cidade" type="text" id="cidade" required />
                 </div>
 
                 <div class="input-block">
                     <label asp-for="UF">UF</label>
-                    <input asp-for="UF" type="text"  />
+                    <input asp-for="UF" type="text" id="UF" required />
                 </div>
 
-                <input type="submit" @*class="btn-login"*@ value="Salvar" />
+                <input type="submit"  value="Salvar" />
 
             </form>
         </div>
     </div>
-
-
-    <ul class="squares">
-    </ul>
-    <script src="~/js/login.js"></script>
     <script>
         $("#cpf").mask("000.000.000-00")
         $("#telefone").mask("(00) 00000-0000")
         $("#cep").mask("00000-000")
     </script>
+    <script src="~/js/buscaCep.js"></script>
 </body>
 </html>

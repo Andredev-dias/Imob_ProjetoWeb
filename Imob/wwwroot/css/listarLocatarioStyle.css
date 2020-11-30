@@ -285,6 +285,7 @@ td{
     font-weight: 900;
     color: coral;
     margin-left: 30%;
+    
 }
  .btn-alterar:hover {
         cursor: pointer;
@@ -451,4 +452,63 @@ td{
         cursor: pointer;
         color: var(--verde);
         
+    }
+
+
+.th_USU {
+    text-align: left;
+    width: 150px;
+    padding-left:0px;
+    color: var(--verde);
+}
+.th_USU1 {
+    text-align: left;
+    width: 150px;
+    padding-left: 195px;
+    color: var(--verde);
+}
+.th_USU2 {
+    text-align: left;
+    width: 150px;
+    padding-left: 180px;
+    color: var(--verde);
+}
+
+.td_USU {
+    text-emphasis-color: none;
+    color: var(--branco);
+    text-align: left;
+    width: 400px;
+    border-bottom: 4px solid var(--escuro);
+}
+
+
+.btn-info {
+    text-align: right;
+    text-decoration: none;
+    width: 50px;
+    font-weight: 900;
+    font-size: 26px;
+    color: yellow;
+    margin-left: 45%;
+}
+
+    .btn-info::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 4px;
+        background: yellow;
+        transition: width .2s;
+        margin-left: 45%;
+    }
+
+    .btn-info:hover::after {
+        width: 100%;
+        transition: width .3s;
+    }
+
+    .btn-info:hover {
+        cursor: pointer;
+        color: yellow;
     }

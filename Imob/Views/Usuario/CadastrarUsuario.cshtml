@@ -18,7 +18,7 @@
         <aside>
             <header>
                 <i class="fab fa-battle-net"></i>
-                <h1>Cadastre um Usuário</h1>
+                <h1>Cadastre um novo Usuário</h1>
                 <a asp-action="ListaUsuarios" asp-controller="Usuario"><i class="fas fa-arrow-left"></i></a>
             </header>
 
@@ -36,21 +36,19 @@
                     <input asp-for="Email" type="email" id="login-email" />
                 </div>
                 <div class="input-block">
-                    <label asp-for="Senha">Password</label>
+                    <label asp-for="Senha">Senha</label>
                     <input asp-for="Senha" type="password" id="login-password" />
                 </div>
                 <div class="input-block">
-                    <label asp-for="ConfirmacaoSenha">Confirm Password</label>
+                    <label asp-for="ConfirmacaoSenha">Confirme sua senha</label>
                     <input asp-for="ConfirmacaoSenha" type="password" id="login-password-confirm" />
                 </div>
-                <input type="submit" @*class="btn-login"*@ value="CadastrarUsuario" />
+                <input type="submit"  value="CadastrarUsuario" />
 
             </form>
         </div>
 
         </div>
-        <ul class="squares">
-        </ul>
-        <script src="~/js/login.js"></script>
+        
 </body>
 </html>
