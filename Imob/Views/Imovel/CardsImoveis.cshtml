@@ -25,54 +25,54 @@
         <div class="topoDaLista">
             <h4 class="h4add">Adicionar</h4>
             <a asp-action="CadastrarImovel" asp-controller="Imovel" class="btn-cad"><i class="fas fa-plus"></i></a>
-            <div class="form-check">
+            @*<div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                 <label class="form-check-label" for="defaultCheck1">
                     Disponível
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                    Alugados
-                </label>
-            </div>
-            <a class="btn-buscar"><i class="fas fa-search-plus"></i></a>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                Alugados
+            </label>
         </div>
-        <div class="card-box">
-            <div class="row row-cols-1 row-cols-md-3">
-                @foreach (Imob.Models.Imovel imovelLista in Model)
-                {
-                    <div class="col mb-3">
-                        <div class="card">
-                            <img src="@imovelLista.Imagem" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">@imovelLista.TipoImovel.Descricao</h5>
-                                <p class="card-text">
-                                    @imovelLista.Endereco - @imovelLista.Cidade/@imovelLista.UF
-                                </p>
-                                <p class="card-title" style="color:var(--verde)">
-                                    R$@imovelLista.ValorAluguel
-                                </p>
-                                @if (imovelLista.Locado)
-                                {
-                                    <p class="card-text"><small class="text-muted">Locado</small></p>
-                                }
-                                else
-                                {
-                                    <p class="card-text"><small class="text-muted">Disponível</small></p>
-                                }
+            <a class="btn-buscar"><i class="fas fa-search-plus"></i></a>*@
+        </div>
+            <div class="card-box">
+                <div class="row row-cols-1 row-cols-md-3">
+                    @foreach (Imob.Models.Imovel imovelLista in Model)
+                    {
+                        <div class="col mb-3">
+                            <div class="card">
+                                <img src="@imovelLista.Imagem" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">@imovelLista.TipoImovel.Descricao</h5>
+                                    <p class="card-text">
+                                        @imovelLista.Endereco - @imovelLista.Cidade/@imovelLista.UF
+                                    </p>
+                                    <p class="card-title" style="color:var(--verde)">
+                                        R$@imovelLista.ValorAluguel
+                                    </p>
+                                    @if (imovelLista.Locado)
+                                    {
+                                        <p class="card-text"><small class="text-muted">Locado</small></p>
+                                    }
+                                    else
+                                    {
+                                        <p class="card-text"><small class="text-muted">Disponível</small></p>
+                                    }
 
-                                <a asp-action="Remover" asp-controller="Imovel" asp-route-id="@imovelLista.Id" class="btn-remover">
-                                    <i class="far fa-trash-alt"></i>
-                                </a>
+                                    <a asp-action="Remover" asp-controller="Imovel" asp-route-id="@imovelLista.Id" class="btn-remover">
+                                        <i class="far fa-trash-alt"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                }
+                    }
+                </div>
             </div>
         </div>
-    </div>
 
 </body>
 </html>
