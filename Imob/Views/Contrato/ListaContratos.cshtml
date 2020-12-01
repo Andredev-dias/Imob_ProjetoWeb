@@ -47,7 +47,7 @@
                     <td class="td_classedddvvv">@contratoLista.DataVencimento</td>
                     <td class="td_classevaloralguelvvv">@contratoLista.ValorAluguel</td>
                     <td>
-                        <a asp-action="Download" asp-controller="Contrato" asp-route-id="@contratoLista.Id" class="btn-pdf">
+                        <a href="~/Contratos/@contratoLista.Arquivo" class="btn-pdf" target="_blank">
                             <i class="far fa-file-pdf"></i>
                         </a>
                     </td>

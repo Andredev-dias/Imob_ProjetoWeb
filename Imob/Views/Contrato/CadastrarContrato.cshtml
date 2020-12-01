@@ -1,4 +1,4 @@
-﻿
+﻿@model Imob.Models.Contrato
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,8 +13,6 @@
     <script type="text/javascript" src="~/js/jquery.mask.min.js"></script>
 </head>
 <body>
-
-
     <div id="page">
         <aside>
             <header>
@@ -28,60 +26,44 @@
                 <span>Imóveis</span>
             </footer>
         </aside>
-
-
-
         <div class="form-wrapper">
-            <form>
-
-
+            <form asp-action="CadastrarContrato" asp-controller="Contrato" method="post">
                 <div class="input-block">
 
-                    <label for="inputState">Locatário</label>
-                    <select id="inputState" class="form-control">
-                        <option selected>escolha um locatário...</option>
-                        <option>...</option>
+                    <label asp-for="LocatarioId">Locatario</label>
+                    <select asp-items="@ViewBag.Locatario" class="form-control" asp-for="LocatarioId">
+                        <option> -- SELECIONE -- </option>
                     </select>
 
                 </div>
 
                 <div class="input-block">
 
-                    <label for="inputState">Corretor</label>
-                    <select id="inputState" class="form-control">
-                        <option selected>escolha um corretor...</option>
-                        <option>...</option>
+                    <label asp-for="CorretorId">Corretor</label>
+                    <select asp-items="@ViewBag.Corretores" class="form-control" asp-for="CorretorId">
+                        <option> -- SELECIONE -- </option>
                     </select>
 
                 </div>
 
                 <div class="input-block">
 
-                    <label for="inputState">Imóvel</label>
-                    <select id="inputState" class="form-control">
-                        <option selected>escolha um imóvel...</option>
-                        <option>...</option>
+                    <label asp-for="ImovelId">Tipo Imovel</label>
+                    <select asp-items="@ViewBag.Imoveis" class="form-control" asp-for="ImovelId">
+                        <option> -- SELECIONE -- </option>
                     </select>
 
                 </div>
 
                 <div class="input-block">
-                    <label for="dtavenc">Data de vencimento</label>
-                    <input type="date" placeholder="Informe um vencimento para o contrato." />
+                    <label asp-for="DataVencimento" for="dtavenc">Data de vencimento</label>
+                    <input type="date" placeholder="Informe um vencimento para o contrato." asp-for="DataVencimento"/>
                 </div>
 
-
-
-                <input type="submit"  value="Salvar" />
+                <input type="submit" value="Salvar" />
 
             </form>
         </div>
     </div>
-
-
-    <ul class="squares">
-    </ul>
-    <script src="~/js/login.js"></script>
-  
 </body>
 </html>
