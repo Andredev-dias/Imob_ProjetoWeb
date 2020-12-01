@@ -3,6 +3,7 @@ using Imob.DAL;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace Imob.DAL
 {
@@ -56,5 +57,9 @@ namespace Imob.DAL
                                                             .Include("Corretor")
                                                             .Include("Locatario")
                                                             .ToList();
+        public Contrato BuscarUltimo(Contrato contrato) => _context.Contratos
+                                                            .Include("Imovel")
+                                                            .Include("Corretor")
+                                                            .Include("Locatario").Where(x => x.DataVencimento == contrato.DataVencimento).First();
     }
 }
