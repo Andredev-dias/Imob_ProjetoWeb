@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<Imob.Models.UsuarioLogado>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -33,7 +34,7 @@
             <thead>
                 <tr>
                     <th class="th_USU">@Html.DisplayNameFor(model => model.Email)</th>
-                    <th class="th_USU1">@Html.DisplayNameFor(model => model.Senha)</th>
+                    <th class="th_USU1" hidden>@Html.DisplayNameFor(model => model.Senha)</th>
                     <th class="th_USU2">@Html.DisplayNameFor(model => model.CriadoEm)</th>
                     <th></th>
                     <th></th>
@@ -46,14 +47,14 @@
                 {
 
                 <tr class="tr_classe">
-                    <td class="td_USU">@Html.DisplayFor(modelItem => item.Email)</td>
-                    <td class="td_USU">@Html.DisplayFor(modelItem => item.Senha)</td>
+                    <td class="td_USU" >@Html.DisplayTextFor(modelItem => item.Email)</td>
+                    <td class="td_USU" hidden>@Html.DisplayFor(modelItem => item.Senha)</td>
                     <td class="td_USU">@Html.DisplayFor(modelItem => item.CriadoEm)</td>
                     <td>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn-remover"><i class="far fa-trash-alt"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" hidden class="btn-remover"><i class="far fa-trash-alt"></i></a>
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn-alterar"> <i class="far fa-edit"></i></a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" hidden class="btn-alterar"> <i class="far fa-edit"></i></a>
                     </td>
                 </tr>
                 }

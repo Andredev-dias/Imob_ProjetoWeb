@@ -28,8 +28,7 @@
             </footer>
         </aside>
 
-        <div class="form-wrapper">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-wrapper">            
             <form asp-action="CadastrarUsuario">
                 <div class="input-block">
                     <label asp-for="Email">Email</label>
@@ -43,7 +42,8 @@
                     <label asp-for="ConfirmacaoSenha">Confirme sua senha</label>
                     <input asp-for="ConfirmacaoSenha" type="password" id="login-password-confirm" />
                 </div>
-                <input type="submit"  value="CadastrarUsuario" />
+                <div asp-validation-summary="ModelOnly"></div>
+                <input type="submit" value="CadastrarUsuario" />
 
             </form>
         </div>
