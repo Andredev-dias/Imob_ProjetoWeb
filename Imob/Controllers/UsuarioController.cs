@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using Imob.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Imob.Controllers
 {
+    [Authorize]
     public class UsuarioController : Controller
     {
         private readonly Context _context;
@@ -67,17 +69,19 @@ namespace Imob.Controllers
                 ModelState.AddModelError("", erro.Description);
             }
         }
-        public IActionResult InicialMenu()
+
+        [AllowAnonymous]
+        public IActionResult Index()
         {
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> InicialMenu([Bind("Email, Senha")] UsuarioLogado usuarioLogado)
+        public async Task<IActionResult> Index([Bind("Email, Senha")] UsuarioLogado usuarioLogado)
         {
             var result = await _signInManager.PasswordSignInAsync(usuarioLogado.Email, usuarioLogado.Senha, false, false);
 
-            var name = User.Identity.Name;
             if (result.Succeeded)
             {
                 return RedirectToAction("InicialMenu", "Home");
@@ -89,7 +93,7 @@ namespace Imob.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("InicialMenu", "Home");
+            return RedirectToAction("Index", "Usuario");
         }
     }
 }

@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.IO;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Imob.Controllers
 {
+    [Authorize]
     public class ImovelController : Controller
     {
         private readonly ImovelDAO _imovelDAO;

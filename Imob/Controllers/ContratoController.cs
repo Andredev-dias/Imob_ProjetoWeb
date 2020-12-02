@@ -2,12 +2,14 @@
 using Imob.DAL;
 using Imob.Models;
 using Imob.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Imob.Controllers
 {
+    [Authorize]
     public class ContratoController : Controller
     {
         private readonly ContratoDAO _contratoDAO;
