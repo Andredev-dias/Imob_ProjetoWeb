@@ -7,20 +7,25 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Imob.Controllers
 {
+    //[Authorize(Roles = "ADMIN")]
     [Authorize]
     public class UsuarioController : Controller
     {
         private readonly Context _context;
         private readonly UserManager<Usuario> _userManager;
         private readonly SignInManager<Usuario> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public UsuarioController(Context context,
             UserManager<Usuario> userManager,
-            SignInManager<Usuario> signInManager)
+            SignInManager<Usuario> signInManager,
+            RoleManager<IdentityRole> roleManager
+            )
         {
             _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
 
         // GET: Usuario
@@ -90,10 +95,41 @@ namespace Imob.Controllers
             return View(usuarioLogado);
         }
 
+        //[Authorize(Roles = "USERS")]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Usuario");
+        }
+
+        [HttpGet]
+        public IActionResult CreateRole()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateRole(CriarRole role)
+        {
+            if(ModelState.IsValid)
+            {
+                IdentityRole identityRole = new IdentityRole
+                {
+                    Name = role.RoleName
+                };
+                IdentityResult identityResult = await _roleManager.CreateAsync(identityRole);
+
+                if (identityResult.Succeeded)
+                {
+                    return RedirectToAction("ListaUsuarios", "Usuario");
+                }
+
+                foreach(IdentityError error in identityResult.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+            }
+            return View(role);
         }
     }
 }
