@@ -18,12 +18,13 @@ namespace Imob.Utils
         {
             var Renderer = new HtmlToPdf();
             var nomeArquivo = new Random().Next();
-            Renderer.RenderHtmlAsPdf("<h1>Contrato de locação residencial</h1>" +
-                                     "<br><h4>Locatario: "+ contrato.Locatario.Nome+"</h4>"+
-                                     "<br><h4>Corretor: " + contrato.Corretor.Nome + "</h4>"+
-                                     "<br><h4>Endereço do Imóvel: " + contrato.Imovel.Endereco+','+ contrato.Imovel.Cidade+','+ contrato.Imovel.UF+"</h4>"+
-                                     "<br><h4>Valor do Aluguel: " + contrato.Imovel.ValorAluguel+"</h4>"+
-                                     "<br><br><br><br><br><br><h4>Assinaturas </h4>"+
+            Renderer.RenderHtmlAsPdf("" + 
+                                     "<h1>Contrato de locação - Imob</h1>" +
+                                     "<br><h4>LOCATARIO: "+ contrato.Locatario.Nome+"</h4>"+
+                                     "<br><h4>CORRETOR: " + contrato.Corretor.Nome + "</h4>"+
+                                     "<br><h4>ENDEREÇO DE IMÓVEL: " + contrato.Imovel.Endereco+','+ contrato.Imovel.Cidade+','+ contrato.Imovel.UF+"</h4>"+
+                                     "<br><h4>VALOR DO ALUGUEL: " + contrato.Imovel.ValorAluguel+"</h4>"+
+                                     "<br><br><br><br><br><br><h4>ASSINATURAS: </h4>"+
                                      "<br><h4>"+ contrato.Locatario.Nome+ ":______________________________ </h4>" +
                                      "<br><h4>" + contrato.Corretor.Nome+ ":______________________________</h4>"
                                      
