@@ -68,6 +68,20 @@ a{
 #btn5 {
     top: 600px;
 }
+#btn6 {
+    top: 700px;
+    color: #CD5C5C;
+}
+
+    #btn6:hover {
+        color: #CD5C5C;
+        position: fixed;
+        left: -50px;
+        width: 300px;
+        box-shadow: 3px 4px 6px #CD5C5C;
+        border-radius: 2px;
+        letter-spacing: initial;
+    }
 
 
 
