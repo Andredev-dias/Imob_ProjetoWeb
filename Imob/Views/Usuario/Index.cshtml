@@ -17,7 +17,7 @@
 
 
         <div class="form-wrapper">
-            <form asp-action="InicialMenu" asp-controller="Usuario">
+            <form asp-action="Index">
                 <div class="input-block">
                     <label asp-for="Email">Email</label>
                     <input asp-for="Email" type="email" id="login-email" />
@@ -26,6 +26,7 @@
                     <label asp-for="Senha" for="login-password">Password</label>
                     <input asp-for="Senha" type="password" id="login-password" />
                 </div>
+                <div asp-validation-summary="ModelOnly"></div>
                 <input type="submit" value="Login" />
 
             </form>

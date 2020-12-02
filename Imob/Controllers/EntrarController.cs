@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Imob.Controllers
 {
+    /*
     public class EntrarController : Controller
     {
         public IActionResult Index() => View();
@@ -15,4 +16,5 @@ namespace Imob.Controllers
             return RedirectToAction("InicialMenu", "Home");
         }
     }
+    */
 }

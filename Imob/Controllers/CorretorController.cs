@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using Imob.DAL;
 using Imob.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Imob.Controllers
 {
+    [Authorize]
     public class CorretorController : Controller
     {
         private readonly CorretorDAO _corretorDAO;

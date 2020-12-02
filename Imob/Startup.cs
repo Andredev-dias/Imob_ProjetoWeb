@@ -20,7 +20,7 @@ namespace Imob
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<ContratoDAO>();
             services.AddScoped<LocatarioDAO>();
@@ -38,8 +38,8 @@ public void ConfigureServices(IServiceCollection services)
 
             services.ConfigureApplicationCookie(options =>
             {
-                options.LoginPath = "/Usuario/Login";
-                options.AccessDeniedPath = "/Usuario/Login";
+                options.LoginPath = "/Usuario/Index";
+                options.AccessDeniedPath = "/Usuario/Index";
             });
 
             services.AddSession();
@@ -74,7 +74,7 @@ public void ConfigureServices(IServiceCollection services)
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Usuario}/{action=Index}/{id?}");
             });
         }
     }
