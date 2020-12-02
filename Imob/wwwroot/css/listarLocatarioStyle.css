@@ -485,7 +485,7 @@ td{
 .th_USU2 {
     text-align: left;
     width: 150px;
-    padding-left: 180px;
+    padding-left: 150px;
     color: var(--verde);
 }
 
@@ -493,37 +493,7 @@ td{
     text-emphasis-color: none;
     color: var(--branco);
     text-align: left;
-    width: 400px;
+    width: 300px;
     border-bottom: 4px solid var(--escuro);
 }
 
-
-.btn-info {
-    text-align: right;
-    text-decoration: none;
-    width: 50px;
-    font-weight: 900;
-    font-size: 26px;
-    color: yellow;
-    margin-left: 45%;
-}
-
-    .btn-info::after {
-        content: '';
-        display: block;
-        width: 0;
-        height: 4px;
-        background: yellow;
-        transition: width .2s;
-        margin-left: 45%;
-    }
-
-    .btn-info:hover::after {
-        width: 100%;
-        transition: width .3s;
-    }
-
-    .btn-info:hover {
-        cursor: pointer;
-        color: yellow;
-    }

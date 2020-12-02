@@ -291,3 +291,25 @@ body {
     }
 }
 
+.botaoGlobal {
+    overflow: hidden;
+    font-family: Roboto, Arial, sans-serif;
+    text-decoration: none;
+    width: auto;
+    height: auto;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--branco);
+    margin: 0 auto;
+    background: none;
+    border: none;
+}
+
+
+
+    .botaoGlobal:hover {
+        color: var(--verde);
+        cursor: pointer;
+        text-shadow: 0 0.5px 0.5px;
+    }
+
