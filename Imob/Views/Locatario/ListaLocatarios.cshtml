@@ -1,4 +1,4 @@
-﻿@model List<Imob.Models.Locatario> 
+﻿@model List<Imob.Models.Locatario>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -28,8 +28,8 @@
             <div class="topoDaLista">
                 <h4 class="h4add">Adicionar</h4>
                 <a asp-action="CadastrarLocatario" asp-controller="Locatario" class="btn-cad"><i class="fas fa-plus"></i></a>
-                <input class="inputDoSearch" type="text" placeholder="Digite o nome do locatário para busca!" />
-                <a class="btn-buscar"><i class="fas fa-search-plus"></i></a>
+                <input class="inputDoSearch" id="inputDoSearch" type="text" placeholder="Digite o nome do locatário para busca!" />
+                <a class="btn-buscar" id="btn-buscar"><i class="fas fa-search-plus"></i></a>
             </div>
             <thead>
                 <tr>
@@ -45,35 +45,83 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="bodyTable">
 
                 @foreach (Imob.Models.Locatario locatarioCadastrado in Model)
                 {
 
-                <tr class="tr_classe">
-                    <td class="td_classeID">@locatarioCadastrado.Id</td>
-                    <td class="td_classe">@locatarioCadastrado.Nome</td>
-                    <td class="td_classe">@locatarioCadastrado.Cpf</td>
-                    <td class="td_classeEMAIL">@locatarioCadastrado.Email</td>
-                    <td class="td_classe">@locatarioCadastrado.Telefone</td>
-                    <td class="td_classe">@locatarioCadastrado.Cidade</td>
-                    <td class="td_classe">@locatarioCadastrado.UF</td>
-                    <td class="td_classe">@locatarioCadastrado.RendaDisponivel.ToString("C2")</td>
-                    <td>
-                        <a asp-action="Remover" asp-controller="Locatario" asp-route-id="@locatarioCadastrado.Id" class="btn-remover">
-                            <i class="far fa-trash-alt"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <a asp-action="EditarLocatario" asp-controller="Locatario" asp-route-id="@locatarioCadastrado.Id" class="btn-alterar">
-                            <i class="far fa-edit"></i>
-                        </a>
-                    </td>
-                </tr>
+                    <tr class="tr_classe">
+                        <td class="td_classeID">@locatarioCadastrado.Id</td>
+                        <td class="td_classe">@locatarioCadastrado.Nome</td>
+                        <td class="td_classe">@locatarioCadastrado.Cpf</td>
+                        <td class="td_classeEMAIL">@locatarioCadastrado.Email</td>
+                        <td class="td_classe">@locatarioCadastrado.Telefone</td>
+                        <td class="td_classe">@locatarioCadastrado.Cidade</td>
+                        <td class="td_classe">@locatarioCadastrado.UF</td>
+                        <td class="td_classe">@locatarioCadastrado.RendaDisponivel.ToString("C2")</td>
+                        <td>
+                            <a asp-action="Remover" asp-controller="Locatario" asp-route-id="@locatarioCadastrado.Id" class="btn-remover">
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-action="EditarLocatario" asp-controller="Locatario" asp-route-id="@locatarioCadastrado.Id" class="btn-alterar">
+                                <i class="far fa-edit"></i>
+                            </a>
+                        </td>
+                    </tr>
                 }
             </tbody>
         </table>
     </div>
+    <script>
+        var tableBody = document.getElementById("bodyTable");
+        var btnBuscar = document.getElementById("btn-buscar");
+        var InputBusca = document.getElementById("inputDoSearch");
+        var locatariosBuscados = [];
 
+        var url = "http://localhost:51196/API/LocatarioAPI/filtrar/";
+
+        btnBuscar.addEventListener("click", () => {
+            url = url + InputBusca.value;
+            buscarCorretores();
+            console.log(locatariosBuscados);
+        });
+
+        const buscarCorretores = () => {
+            fetch(url, { method: "GET" })
+                .then(response => response.json())
+                .then(json => {
+                    for (let x = 0; x < json.length; x++) {
+                        locatariosBuscados.push(json[x]);
+                    }
+                    povoaTemplate(locatariosBuscados);
+                })
+                .catch(error => console.log(error));
+        }
+
+        function povoaTemplate(corretores) {
+            var templateRow = [];
+            for (let i = 0; i < corretores.length; i++) {
+                templateRow.push(
+                    `<tr class="tr_classe">
+
+                                    <td class="td_classeID">${corretores[i].id}</td>
+                                    <td class="td_classe">${corretores[i].nome}</td>
+                                    <td class="td_classe">${corretores[i].cpf}</td>
+                                    <td class="td_classeEMAIL">${corretores[i].email}</td>
+                                    <td class="td_classeTEL">${corretores[i].telefone}</td>
+                                    <td class="td_classe">${corretores[i].cidade}</td>
+                                    <td class="td_classe">${corretores[i].uf}</td>
+                                    <td class="td_classe">${corretores[i].cofeci}</td>
+
+                                </tr>`
+                );
+            }
+            console.log(templateRow);
+            tableBody.innerHTML = "";
+            tableBody.innerHTML = templateRow;
+        }
+    </script>
 </body>
 </html>

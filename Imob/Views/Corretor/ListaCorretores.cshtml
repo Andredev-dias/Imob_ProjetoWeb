@@ -11,8 +11,6 @@
     <script src="https://kit.fontawesome.com/0aa0d458c6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-
     <div id="page">
         <aside>
             <header>
@@ -26,14 +24,12 @@
                 <span>Imóveis</span>
             </footer>
         </aside>
-
-
         <table class="tabelaClasse">
             <div class="topoDaLista">
                 <h4 class="h4add">Adicionar</h4>
                 <a asp-action="CadastrarCorretor" asp-controller="Corretor" class="btn-cad"><i class="fas fa-plus"></i></a>
-                <input class="inputDoSearch" type="text" placeholder="Digite o nome do corretor para busca!" />
-                <a class="btn-buscar"><i class="fas fa-search-plus"></i></a>
+                <input class="inputDoSearch" id="inputDoSearch" type="text" placeholder="Digite o nome do corretor para busca!" />
+                <a class="btn-buscar" id="btn-buscar"><i class="fas fa-search-plus"></i></a>
             </div>
             <thead>
                 <tr>
@@ -49,10 +45,9 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
-
+            <tbody id="bodyTable">
                 @foreach (Imob.Models.Corretor corretorCadastrado in Model)
-                { 
+                {
                     <tr class="tr_classe">
 
                         <td class="td_classeID">@corretorCadastrado.Id</td>
@@ -78,12 +73,54 @@
             </tbody>
         </table>
     </div>
+    <script>
+        var tableBody = document.getElementById("bodyTable");
+        var btnBuscar = document.getElementById("btn-buscar");
+        var InputBusca = document.getElementById("inputDoSearch");
+        var corretoresBuscados = [];
 
+        var url = "http://localhost:51196/API/CorretorAPI/filtrar/";
 
+        btnBuscar.addEventListener("click", () => {
+            url = url + InputBusca.value;
+            buscarCorretores();
+            console.log(corretoresBuscados);      
+         });
 
+        const buscarCorretores = () => {
+            fetch(url, { method: "GET" })
+                .then(response => response.json())
+                .then(json => {
+                    for (let x = 0; x < json.length; x++) {
+                        corretoresBuscados.push(json[x]);
+                    }
+                    povoaTemplate(corretoresBuscados);
+                })
+                .catch(error => console.log(error));
+        }
 
-    <ul class="squares">
-    </ul>
-    <script src="~/js/login.js"></script>
+        function povoaTemplate (corretores){
+            var templateRow = [];
+            for (let i = 0; i < corretores.length; i++) {
+                templateRow.push(
+                    `<tr class="tr_classe">
+
+                            <td class="td_classeID">${corretores[i].id}</td>
+                            <td class="td_classe">${corretores[i].nome}</td>
+                            <td class="td_classe">${corretores[i].cpf}</td>
+                            <td class="td_classeEMAIL">${corretores[i].email}</td>
+                            <td class="td_classeTEL">${corretores[i].telefone}</td>
+                            <td class="td_classe">${corretores[i].cidade}</td>
+                            <td class="td_classe">${corretores[i].uf}</td>
+                            <td class="td_classe">${corretores[i].cofeci}</td>
+                            
+                        </tr>`
+                );
+            }
+            console.log(templateRow);
+            tableBody.innerHTML = "";
+            tableBody.innerHTML = templateRow;
+        }
+    </script>
 </body>
 </html>
