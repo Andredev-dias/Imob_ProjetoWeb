@@ -12,3 +12,12 @@
 input{
     background: none;
 }
+
+#page aside h1 {
+    color: var(--verde);
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 40px;
+    line-height: 42px;
+    margin-top: 10px;
+    animation: fromRight 3s cubic-bezier(0, 0.2, 0.8,1);
+}

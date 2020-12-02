@@ -215,6 +215,20 @@ form {
     color: var(--verde);
     cursor:pointer;
 }
+.btn-CEP2 {
+    position: absolute;
+    top:15%;
+    right: 30%;
+    background: none;
+    border: none;
+    color: var(--branco);
+    font-size: 30px;
+}
+
+    .btn-CEP2:hover {
+        color: var(--verde);
+        cursor: pointer;
+    }
 
 .squares li {
     width: 40px;
