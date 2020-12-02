@@ -136,6 +136,21 @@ body {
     border-radius: 5px;
 }
 
+    .tabelaClasse::-webkit-scrollbar {
+        width: 15px;
+        background: var(--escuro);
+    }
+
+    .tabelaClasse::-webkit-scrollbar-thumb {
+        background: var(--verde);
+        box-shadow: 2px 2px 2px 2px var(--verde);
+        border-radius: 5px;
+    }
+
+    .tabelaClasse::-webkit-scrollbar-corner {
+        display: none;
+    }
+
 .th_classe {
     text-align: left;
     width: 100px;

@@ -147,12 +147,26 @@ body {
     width: 100%;
 }
 
-.card{
-    background: var(--claro);
-    color: var(--branco);
-    border: solid 4px var(--escuro);
-    min-height:55vh;
-}
+.card-box::-webkit-scrollbar {
+        width: 15px;
+        background: var(--escuro);
+    }
+    .card-box::-webkit-scrollbar-thumb {
+        background: var(--verde);
+        box-shadow: 2px 2px 2px 2px var(--verde);
+        border-radius:5px;
+        
+    }
+    .card-box::-webkit-scrollbar-corner {
+        display: none;
+        
+    }
+    .card {
+        background: var(--claro);
+        color: var(--branco);
+        border: solid 4px var(--claro);
+        min-height: 55vh;
+    }
 
 .btn-buscar{
     margin-top: -20px;
@@ -161,6 +175,7 @@ body {
 
 .card-img-top{
     min-height:33vh;
+    max-height:33vh;
 }
 
 .btn-remover {
